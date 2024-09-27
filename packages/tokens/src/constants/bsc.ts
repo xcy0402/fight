@@ -2122,14 +2122,6 @@ export const bscTokens = {
     'Era Token',
     'https://www.era7.io/',
   ),
-  fight: new ERC20Token(
-    ChainId.BSC,
-    '0x4f39c3319188A723003670c3F9B9e7EF991E52F3',
-    18,
-    'FIGHT',
-    'Fight Token',
-    'https://www.cryptofightclub.io/',
-  ),
   loa: new ERC20Token(
     ChainId.BSC,
     '0x94b69263FCA20119Ae817b6f783Fc0F13B02ad50',

@@ -48,7 +48,6 @@ export function CurrencyLogo({
     }
     return [];
   }, [currency, uriLocations, useTrustWalletUrl]);
-  console.log(currency?.symbol,currency,srcs);
   // console.log("currency?.logoURI=='fight'",currency?.logoURI=='fight',fight);
   // if(currency?.logoURI=='fight'){
   //   return (

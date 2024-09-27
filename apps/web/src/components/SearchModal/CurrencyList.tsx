@@ -145,7 +145,6 @@ export default function CurrencyList({
   const onRampFlow = pathname === '/buy-crypto'
 
   const itemData: (Currency | undefined)[] = useMemo(() => {
-    console.log('itemDataitemDataitemData',onRampFlow,breakIndex !== undefined);
     if (onRampFlow) return mode === 'onramp-output' ? [native, ...currencies] : [...currencies]
     let formatted: (Currency | undefined)[] = showNative
       ? [native, ...currencies, ...inactiveCurrencies]
@@ -161,7 +160,6 @@ export default function CurrencyList({
 
   const Row = useCallback(
     ({ data, index, style }) => {
-      console.log('31312312312',data, index, style);
       const currency: any = data[index]
       const isFiat = Boolean(Object.keys(fiatCurrencyMap).includes(currency?.symbol))
 
@@ -181,7 +179,6 @@ export default function CurrencyList({
       const token = wrappedCurrency(currency, chainId)
 
       const showImport = index > currencies.length
-      console.log('index === breakIndex || !data',index === breakIndex || !data);
       if (index === breakIndex || !data) {
         return (
           <FixedContentRow style={style}>
@@ -199,7 +196,6 @@ export default function CurrencyList({
           </FixedContentRow>
         )
       }
-      console.log('showImport && token',showImport && token);
       if (showImport && token) {
         return (
           <ImportRow

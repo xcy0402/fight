@@ -1,7 +1,7 @@
 import { ChainId } from '@pancakeswap/chains';
 // import extended from '../../../public/json/pancakeswap-extended.json'
 // import bnb from '../../../public/json/pancakeswap-bnb-mm.json'
-export const PANCAKE_EXTENDED = 'http://192.168.3.13:5500/public/json/pancakeswap-extended.json'
+export const PANCAKE_EXTENDED = 'https://static.fightdefi.pro/json/pancakeswap-extended.json'
 // export const PANCAKE_EXTENDED = 'https://tokens.pancakeswap.finance/pancakeswap-extended.json'
 
 const COINGECKO = 'https://tokens.pancakeswap.finance/coingecko.json'
@@ -14,7 +14,7 @@ const PANCAKE_BASE_DEFAULT = 'https://tokens.pancakeswap.finance/pancakeswap-bas
 const PANCAKE_OPBNB_DEFAULT = 'https://tokens.pancakeswap.finance/pancakeswap-opbnb-default.json'
 
 export const PANCAKE_ETH_MM = 'https://tokens.pancakeswap.finance/pancakeswap-eth-mm.json'
-export const PANCAKE_BSC_MM = 'http://192.168.3.13:5500/public/json/pancakeswap-bnb-mm.json'
+export const PANCAKE_BSC_MM = 'https://static.fightdefi.pro/json/pancakeswap-bnb-mm.json'
 // export const PANCAKE_BSC_MM = 'https://tokens.pancakeswap.finance/pancakeswap-bnb-mm.json'
 
 const COINGECKO_ETH = 'https://tokens.coingecko.com/uniswap/all.json'

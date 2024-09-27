@@ -1,12 +1,12 @@
-import memoize from 'lodash/memoize'
 import { ContextApi } from '@pancakeswap/localization'
-import { PageMeta } from './types'
+import memoize from 'lodash/memoize'
 import { ASSET_CDN } from './endpoints'
+import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
   title: 'FightSwap',
   description: 'Trade, earn, and own crypto on the all-in-one multichain DEX',
-  image: `${ASSET_CDN}/web/og/hero.jpg`,
+  // image: `${ASSET_CDN}/web/og/hero.jpg`,
 }
 
 interface PathList {

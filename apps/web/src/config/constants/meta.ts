@@ -68,12 +68,11 @@ export const getCustomMeta = memoize(
     const pathMetadata =
       pathList.paths[path] ??
       pathList.paths[Object.entries(pathList.paths).find(([url, data]) => data.basePath && path.startsWith(url))?.[0]]
-
     if (pathMetadata) {
       return {
         title: `${pathMetadata.title}`,
         ...(pathMetadata.description && { description: pathMetadata.description }),
-        image: pathMetadata.image,
+        // image: pathMetadata.image,
       }
     }
     return null

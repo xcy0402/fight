@@ -7,7 +7,7 @@ import { styled } from "styled-components";
 import { space, SpaceProps } from "styled-system";
 
 import fight from './fight.png';
-import ftp from './ftp.jpg';
+import ftp from './ftp.png';
 import { getCurrencyLogoUrls } from "./utils";
 const StyledLogo = styled(TokenLogo)<{ size: string }>`
   width: ${({ size }) => size};

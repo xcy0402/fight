@@ -7,7 +7,7 @@ import { ASSET_CDN } from 'config/constants/endpoints'
 import { useMemo } from 'react'
 import { styled } from 'styled-components'
 import fight from '../../../public/images/fight.png'
-import ftp from '../../../public/images/ftp.jpg'
+import ftp from '../../../public/images/ftp.png'
 import getTokenLogoURL from '../../utils/getTokenLogoURL'
 
 const StyledLogo = styled(TokenLogo)<{ size: string }>`

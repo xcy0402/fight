@@ -24,6 +24,7 @@ import {
   getContract,
   getCrossFarmingProxyContract,
   getFarmAuctionContract,
+  getNftDepContract,
   getFixedStakingContract,
   getGaugesVotingContract,
   getIfoCreditAddressContract,
@@ -229,6 +230,11 @@ export const useNftSaleContract = () => {
 export const useFarmAuctionContract = () => {
   const { data: signer } = useWalletClient()
   return useMemo(() => getFarmAuctionContract(signer ?? undefined), [signer])
+}
+
+export const useNftDepContract = () => {
+  const { data: signer } = useWalletClient()
+  return useMemo(() => getNftDepContract(signer ?? undefined), [signer])
 }
 
 export const useNftMarketContract = () => {

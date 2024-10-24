@@ -77,6 +77,7 @@ import { bunnyFactoryABI } from 'config/abi/bunnyFactory'
 import { chainlinkOracleABI } from 'config/abi/chainlinkOracle'
 import { crossFarmingReceiverABI } from 'config/abi/crossFarmingReceiver'
 import { farmAuctionABI } from 'config/abi/farmAuction'
+import  nftDepABI from 'config/abi/FTPWhBh.json'
 import { fixedStakingABI } from 'config/abi/fixedStaking'
 import { lotteryV2ABI } from 'config/abi/lotteryV2'
 import { lpTokenABI } from 'config/abi/lpTokenAbi'
@@ -231,6 +232,10 @@ export const getChainlinkOracleContract = (address: Address, signer?: WalletClie
 
 export const getFarmAuctionContract = (signer?: WalletClient) => {
   return getContract({ abi: farmAuctionABI, address: getFarmAuctionAddress(), signer })
+}
+
+export const getNftDepContract = (signer?: WalletClient) => {
+  return getContract({ abi: nftDepABI, address: '0x7a3D4dd93208B287b0cC9BfB461B2106E87D135e', signer })
 }
 
 export const getNftMarketContract = (signer?: WalletClient) => {

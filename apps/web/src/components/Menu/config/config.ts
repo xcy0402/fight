@@ -76,6 +76,10 @@ const config: (
           href: '/liquidity',
         },
         {
+          label: '白洞對抗',
+          href: '/white-hole',
+        },
+        {
           label: t('Perpetual'),
           // href: getPerpetualUrl({
           //   chainId,

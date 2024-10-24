@@ -12,6 +12,7 @@ export const config = {
     '/',
     '/swap',
     '/liquidity',
+    '/white-hole',
     '/pools',
     '/cake-staking',
     '/gauges-voting',

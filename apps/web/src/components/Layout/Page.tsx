@@ -41,13 +41,13 @@ export const PageMeta: React.FC<React.PropsWithChildren> = () => {
     <NextSeo
       title={pageMeta.title}
       description={description}
-      openGraph={
-        image
-          ? {
-              images: [{ url: image, alt: pageMeta?.title, type: 'image/jpeg' }],
-            }
-          : undefined
-      }
+      // openGraph={
+      //   image
+      //     ? {
+      //         images: [{ url: image, alt: pageMeta?.title, type: 'image/jpeg' }],
+      //       }
+      //     : undefined
+      // }
     />
   )
 }

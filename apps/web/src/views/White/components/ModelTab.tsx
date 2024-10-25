@@ -77,7 +77,7 @@ export default function ModelTab() {
       },
       onConfirm: () => {
         const ref = getRefAddress()
-        
+
         if (!isShareholder) {
           if (!ref && nftId == 0) {
             throw new Error('没有邀请人')
@@ -86,9 +86,9 @@ export default function ModelTab() {
             throw new Error('邀请人无效')
           }
         }
-        
+
         const bidAmount = new BigNumber(bid).times(DEFAULT_TOKEN_DECIMAL).toString()
-        const add = (!(Number(nftId) > 0 || isShareholder))? ref:  '0x0000000000000000000000000000000000000000' 
+        const add = (!(Number(nftId) > 0 || isShareholder)) ? ref : '0x0000000000000000000000000000000000000000'
         const id = nftId || teamId
         console.log(bidAmount, add);
         return callWithGasPrice(FTPWhBhContract, 'deposit', [bidAmount, add])
@@ -99,6 +99,17 @@ export default function ModelTab() {
     });
   return (
     <>
+      {
+        (nftId == 0) ? null :
+          <>
+            <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
+              邀请链接
+            </Heading>
+            <FlexGap flexDirection="column" mb="24px" gap="8px">
+              <CopyAddress tooltipMessage={t('Copied')} account={`${window.location.protocol}//${window.location.host}?ref=${account ?? ''}`} />
+            </FlexGap>
+          </>
+      }
       <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
         {t('Teams')}ID: # {nftId == 0 ? (teamId == 0 ? '' : Number(teamId)) : Number(nftId)}
       </Heading>

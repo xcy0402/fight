@@ -58,7 +58,7 @@ export default function IncomeTab() {
                 <Text color='#7645d9' fontSize='16px' fontWeight='bold'>邀请链接</Text>
             </Box> */}
 
-            {
+            {/* {
                 (nftId == 0) ? null :
                     <>
                         <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
@@ -68,7 +68,7 @@ export default function IncomeTab() {
                             <CopyAddress tooltipMessage={t('Copied')} account={`${window.location.protocol}//${window.location.host}?ref=${account ?? ''}`} />
                         </FlexGap>
                     </>
-            }
+            } */}
             <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
                 匯總
             </Heading>

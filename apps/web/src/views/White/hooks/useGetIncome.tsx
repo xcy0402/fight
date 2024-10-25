@@ -61,15 +61,15 @@ export const useGetIncome = () => {
     return {
         investmentAmount: results ? (results[2].result ? results[2].result : 0) : 0,
         performanceAmount: results ? (results[0].result ? results[0].result[2] : 0) : 0,
-        shareholdersReceived: results ? (results[0].result ? results[0].result[4] : 0) : 0,
-        shareholdersReceive: results ? (results[0].result ? results[0].result[5] : 0) : 0,
-        teamReceived: results ? (results[0].result ? results[0].result[6] : 0) : 0,
-        teamReceive: results ? (results[0].result ? results[0].result[7] : 0) : 0,
+        shareholdersReceived: results ? (results[0].result ? results[0].result[5] : 0) : 0,
+        shareholdersReceive: results ? (results[0].result ? results[0].result[4] : 0) : 0,
+        teamReceived: results ? (results[0].result ? results[0].result[7] : 0) : 0,
+        teamReceive: results ? (results[0].result ? results[0].result[6] : 0) : 0,
         dividendsReceived: results ? (results[1].result ? results[1].result[4] : 0) : 0,
         dividendsReceive: results ? (results[1].result ? results[1].result[3] : 0) : 0,
         dividendsTime: results ? (results[1].result ? results[1].result[7] : 0) : 0,
-        tradeReceived: results ? (results[3].result ? results[3].result[3] : 0) : 0,
-        tradeReceive: results ? (results[3].result ? results[3].result[4] : 0) : 0,
+        tradeReceived: results ? (results[3].result ? results[3].result[4] : 0) : 0,
+        tradeReceive: results ? (results[3].result ? results[3].result[3] : 0) : 0,
     }
 }
 

@@ -1,13 +1,17 @@
 import { Trans, useTranslation } from '@pancakeswap/localization'
-import { Button, CopyAddress, Flex, FlexGap, Heading, Link, Text, Box, Grid, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Button, CopyAddress, Flex, FlexGap, Heading, Link, Text, Box, Grid, useMatchBreakpoints, useToast } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import IncomeCard from './IncomeCard';
 import { useAccount } from 'wagmi'
-import {useState,useEffect} from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Address, useContractReads } from 'wagmi'
 import { useActiveChainId } from 'hooks/useActiveChainId'
-import abi1 from '../abi/abi1.json';
-import abi2 from '../abi/abi2.json';
+import { useGetNftId, getFTPWhBhContract, useGetIncome } from '../hooks/useGetIncome';
+import { formatNumber, getBalanceAmount, getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import BigNumber from 'bignumber.js'
+import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
+import useCatchTxError from 'hooks/useCatchTxError';
+import { ToastDescriptionWithTx } from 'components/Toast'
 const SumBox = styled(Box)`
   width: 100%;
   border-radius:12px;
@@ -24,58 +28,47 @@ export default function IncomeTab() {
     const { t } = useTranslation()
     const { address: account } = useAccount()
     const { chainId } = useActiveChainId()
-    const [value1,setValue1]=useState(0)
-    const [value2,setValue2]=useState(0)
-    const [value3,setValue3]=useState(0)
-    const [value4,setValue4]=useState(0)
-    const [value5,setValue5]=useState(0)
-    const [value6,setValue6]=useState(0)
-    const [value7,setValue7]=useState(0)
-    const [value8,setValue8]=useState(0)
-    useEffect(()=>{
-        if(account){
-            // const { data: results } = useContractReads({
-            //     watch: true,
-            //     enabled: true,
-            //     contracts: [
-            //       {
-            //         chainId,
-            //         abi: abi1,
-            //         address: '0x85C9AcF3952B6F0940d1582f982d923Cc3824184',
-            //         functionName: 'getUserPrincipal',
-            //         args: [account],
-            //       },
-            //       {
-            //         chainId,
-            //         abi:abi2,
-            //         address: '0x7a3D4dd93208B287b0cC9BfB461B2106E87D135e',
-            //         functionName: 'accountOf',
-            //         args: [account],
-            //       },
-            //       {
-            //         chainId,
-            //         abi: abi2,
-            //         address: '0x7a3D4dd93208B287b0cC9BfB461B2106E87D135e',
-            //         functionName: 'getAccount',
-            //         args: [account],
-            //       },
-            //     ],
-            //   })
-            //   console.log(results);
+    const { nftId } = useGetNftId();
+    const { callWithGasPrice } = useCallWithGasPrice()
+    const FTPWhBhContract = getFTPWhBhContract()
+    const { fetchWithCatchTxError } = useCatchTxError()
+    const { toastSuccess } = useToast()
+    const { investmentAmount, performanceAmount, shareholdersReceived, shareholdersReceive, teamReceived, teamReceive, dividendsReceived, dividendsReceive ,dividendsTime,tradeReceived,tradeReceive} = useGetIncome()
+    const investmentAmountStr = getBalanceAmount(new BigNumber(investmentAmount?.toString() || 0)).toString()
+    const performanceAmountStr = getBalanceAmount(new BigNumber(performanceAmount?.toString() || 0)).toString()
+    const shareholdersReceivedStr = getBalanceAmount(new BigNumber(shareholdersReceived?.toString() || 0)).toString()
+    const shareholdersReceiveStr = getBalanceAmount(new BigNumber(shareholdersReceive?.toString() || 0)).toString()
+    const teamReceivedStr = getBalanceAmount(new BigNumber(teamReceived?.toString() || 0)).toString()
+    const teamReceiveStr = getBalanceAmount(new BigNumber(teamReceive?.toString() || 0)).toString()
+    const dividendsReceivedStr = getBalanceAmount(new BigNumber(dividendsReceived?.toString() || 0)).toString()
+    const dividendsReceiveStr = getBalanceAmount(new BigNumber(dividendsReceive?.toString() || 0)).toString()
+    const tradeReceivedStr = getBalanceAmount(new BigNumber(tradeReceived?.toString() || 0)).toString()
+    const tradeReceiveStr = getBalanceAmount(new BigNumber(tradeReceive?.toString() || 0)).toString()
+    const receive = async (functionName: string) => {
+        const receipt = await fetchWithCatchTxError(() => {
+            return callWithGasPrice(FTPWhBhContract, functionName, [])
+        })
+        if (receipt?.status) {
+            toastSuccess(t('Bid placed!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
         }
-        
-    },[account])
+    }
     return (
         <>
             {/* <Box marginBottom='20px'>
                 <Text color='#7645d9' fontSize='16px' fontWeight='bold'>邀请链接</Text>
             </Box> */}
-            <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
-                邀请链接
-            </Heading>
-            <FlexGap flexDirection="column" mb="24px" gap="8px">
-                <CopyAddress tooltipMessage={t('Copied')} account={`${window.location.protocol}//${window.location.host}?ref=${account ?? ''}`} />
-            </FlexGap>
+
+            {
+                (nftId == 0) ? null :
+                    <>
+                        <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
+                            邀请链接
+                        </Heading>
+                        <FlexGap flexDirection="column" mb="24px" gap="8px">
+                            <CopyAddress tooltipMessage={t('Copied')} account={`${window.location.protocol}//${window.location.host}?ref=${account ?? ''}`} />
+                        </FlexGap>
+                    </>
+            }
             <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
                 匯總
             </Heading>
@@ -84,21 +77,21 @@ export default function IncomeTab() {
                     <Text fontSize={14} color="textSubtle" textTransform="uppercase">
                         投入金額
                     </Text>
-                    <ValueText>100$</ValueText>
+                    <ValueText>{investmentAmountStr}$</ValueText>
                 </Flex>
                 <Flex width='100%' alignItems='center' justifyContent='space-between'>
                     <Text fontSize={14} color="textSubtle" textTransform="uppercase">
                         團隊業績
                     </Text>
-                    <ValueText>100$</ValueText>
+                    <ValueText>{performanceAmountStr}$</ValueText>
                 </Flex>
                 <Flex></Flex>
             </SumBox>
             <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
                 分紅
             </Heading>
-            <Box marginBottom='24px' paddingX='24px'>
-            <IncomeCard type="Trade" dataText="交易分紅" value1={value7} value2={value8} />
+            <Box marginBottom='24px'>
+                <IncomeCard type="Trade" dataText="交易分紅" value1={tradeReceivedStr} value2={tradeReceiveStr} />
             </Box>
             <Grid
                 width='100%'
@@ -108,10 +101,10 @@ export default function IncomeTab() {
                 alignItems="center"
                 mx="auto"
             >
-                <IncomeCard type="Shareholders" dataText="股東獎勵" value1={value1} value2={value2} />
-                <IncomeCard type="TeamLeader" dataText="團隊長獎勵" value1={value3} value2={value4} />
-                <IncomeCard type="Team" dataText="團隊分紅" value1={value5} value2={value6} />
-                
+                <IncomeCard type="Shareholders" functionName='claimCeoReward' dataText="股東獎勵" value1={shareholdersReceivedStr} value2={shareholdersReceiveStr} />
+                <IncomeCard type="TeamLeader" functionName='claimLeaderReward' dataText="團隊長獎勵" value1={teamReceivedStr} value2={teamReceiveStr} />
+                <IncomeCard type="Team" functionName='claim' dataText="團隊分紅" nextTime={dividendsTime} value1={dividendsReceivedStr} value2={dividendsReceiveStr} />
+
             </Grid>
 
         </>

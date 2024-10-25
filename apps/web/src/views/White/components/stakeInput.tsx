@@ -1,7 +1,7 @@
 import React, { ReactNode, InputHTMLAttributes } from "react";
 import { Modal, Text, Flex, Input, Box, Button, LogoRoundIcon, useToast, Heading, BoxProps, InputProps } from '@pancakeswap/uikit'
 import { styled } from 'styled-components'
-
+import { useTranslation } from '@pancakeswap/localization'
 export interface BalanceInputProps extends BoxProps {
     value: string | number;
     onUserInput: (input: string) => void;
@@ -70,13 +70,14 @@ const stakeInput: React.FC<React.PropsWithChildren<BalanceInputProps>> = ({
             onUserInput(e.currentTarget.value.replace(/,/g, "."));
         }
     };
-    
+    const { t } = useTranslation()
     return (
+        
         <StyledBalanceInput isWarning={isWarning} {...props}>
             <Flex width="100%" justifyContent='space-between' alignItems='center' >
-                <Text>质押</Text>
+                <Text>{t('Stake')}</Text>
                 <Flex  alignItems='center'>
-                    <Text>余额：{balance}</Text>
+                    <Text>{t('Balance')}：{balance}</Text>
                     <Button
                         scale="xs"
                         mx="5px"
@@ -84,7 +85,7 @@ const stakeInput: React.FC<React.PropsWithChildren<BalanceInputProps>> = ({
                         variant="tertiary"
                         onClick={setMax}
                     >
-                        最大
+                        {t('Max')}
                     </Button>
                 </Flex>
             </Flex>

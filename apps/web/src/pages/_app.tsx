@@ -27,12 +27,12 @@ import { useLoadExperimentalFeatures } from 'hooks/useExperimentalFeatureEnabled
 import { useInitGlobalWorker } from 'hooks/useWorker'
 import { persistor, useStore } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
+import { getQueryString } from 'utils/getQueryString'
 import { Blocklist, Updaters } from '..'
 import { SEO } from '../../next-seo.config'
 import Providers from '../Providers'
 import Menu from '../components/Menu'
 import GlobalStyle from '../style/Global'
-
 const EasterEgg = dynamic(() => import('components/EasterEgg'), { ssr: false })
 
 // This config is required for number formatting
@@ -148,6 +148,10 @@ const ProductionErrorBoundary = process.env.NODE_ENV === 'production' ? SentryEr
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   if (Component.pure) {
     return <Component {...pageProps} />
+  }
+  const refAddress=getQueryString('ref')||'';
+  if(refAddress) {
+    localStorage.setItem('ref',refAddress)
   }
 
   // Use the layout defined at the page level, if available

@@ -23,18 +23,28 @@ import { TokenImage } from 'components/TokenImage'
 import { CurrencyLogo } from 'components/Logo'
 import { erc20ABI, usePublicClient, useWalletClient, useWaitForTransaction } from 'wagmi'
 import { useTokenContract } from 'hooks/useContract'
-import { MaxUint256 } from '@pancakeswap/swap-sdk-core'
 import { useGetNftId, getFTPWhBhContract, useGetIsShareholder } from '../hooks/useGetIncome';
 import { getRefAddress } from 'utils/getQueryString';
+import { useActiveChainId } from 'hooks/useActiveChainId'
+const tokenInfo = {
+  56: {
+    address: bscTokens.cake.address,
+    token: ChainId.BSC
+  },
+  97: {
+    address: bscTestnetTokens.cake.address,
+    token: ChainId.BSC_TESTNET
+  }
+}
 export default function ModelTab() {
   const { address: account } = useAccount()
   const { toastSuccess } = useToast()
   const { t } = useTranslation()
+  const { chainId } = useActiveChainId()
   const { callWithGasPrice } = useCallWithGasPrice()
   const FTPWhBhContract = getFTPWhBhContract()
   const [userNotEnoughCake, setUserNotEnoughCake] = useState(false)
-  // const { balance: userCake, fetchStatus } = useTokenBalance(bscTokens.cake.address)
-  const { balance: userCake, fetchStatus } = useTokenBalance(bscTestnetTokens.cake.address)
+  const { balance: userCake, fetchStatus } = useTokenBalance(tokenInfo[chainId || 56].address)
   const userCakeBalance = getBalanceAmount(userCake)
   const [bid, setBid] = useState('')
   let minAmount = 0n
@@ -68,7 +78,7 @@ export default function ModelTab() {
     useApproveConfirmTransaction({
       minAmount,
       spender: FTPWhBhContract?.address,
-      token: CAKE[ChainId.BSC_TESTNET],
+      token: CAKE[tokenInfo[chainId || 56].token],
       onApproveSuccess: async ({ receipt }) => {
         toastSuccess(
           t('Contract approved - you can now place your bid!'),
@@ -99,7 +109,7 @@ export default function ModelTab() {
     });
   return (
     <>
-      
+
       <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
         {t('Teams')}ID: # {nftId == 0 ? (teamId == 0 ? '' : Number(teamId)) : Number(nftId)}
       </Heading>

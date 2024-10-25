@@ -11,9 +11,9 @@ import { useContractRead } from 'wagmi'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { getRefAddress } from 'utils/getQueryString'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-export const FTPContract = { abi: FTPWhBh as Abi, address: '0x1dc12d8f74384F9AD00aaC35f618B0C142E2E6F5' as `0x${string}` }
-export const NFTContract = { abi: NFT as Abi, address: '0xF8D0a69481820817da32988772dc25105fc4F432' as `0x${string}` }
-export const PlusContract = { abi: PlusBHDividenTracker as Abi, address: '0x85C9AcF3952B6F0940d1582f982d923Cc3824184' as `0x${string}` }
+export const FTPContract = { abi: FTPWhBh as Abi, address: '0xE4833E0c59C98e77A4140Db2332de471C020D1Fa' as `0x${string}` }
+export const NFTContract = { abi: NFT as Abi, address: '0xB1Bb7abE61F2E367fA7e95CCf20aA43050D8690e' as `0x${string}` }
+export const PlusContract = { abi: PlusBHDividenTracker as Abi, address: '0x105cB4e4629d506Dc7aa7919C7aefA9ED99A61Db' as `0x${string}` }
 export const getFTPWhBhContract = (signer?: WalletClient) => {
     return getContract({ ...FTPContract, signer })
 }

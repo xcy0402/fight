@@ -62,10 +62,10 @@ const IncomeCard: React.FC<{
         const receipt = await fetchWithCatchTxError(() => {
             return callWithGasPrice(FTPWhBhContract, functionName, [])
         })
-        setIsLoading(false)
         if (receipt?.status) {
             toastSuccess(t('Bid placed!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
         }
+        setIsLoading(false)
     }
     return (
         <Box width='100%'>
@@ -105,7 +105,7 @@ const IncomeCard: React.FC<{
                     </Text>
                     }
                     {type == 'Trade' ? null :
-                        <Button width="100%" mt="auto" disabled={(!Number(value2) || (!!nextTime && Number(nextTime) * 1000 > new Date().getTime()))} onClick={receive} endIcon={isLoading ? spinnerIcon : undefined}>
+                        <Button width="100%" mt="auto" disabled={isLoading|| (!Number(value2) || (!!nextTime && Number(nextTime) * 1000 > new Date().getTime()))} onClick={receive} endIcon={isLoading ? spinnerIcon : undefined}>
                             {isLoading ? '领取中' : t('Claim')}
                         </Button>
                     }

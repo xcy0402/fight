@@ -3140,5 +3140,21 @@
   "%percent%% of total supply": "%percent%% of total supply",
   "Your deposit value in USD": "Your deposit value in USD",
   "Min deposit USD": "Min deposit USD",
-  "Savings": "Savings"
+  "Savings": "Savings",
+  "Dividend has been distributed":"已分紅",
+    "Remaining dividends":"剩餘分紅",
+    "To be collected":"待領取",
+    "Next collection time":"下次領取時間",
+    "Receiving":"領取中",
+    "Invitation link":"邀请链接",
+    "Summary":"匯總",
+    "Investment amount":"投入金額",
+    "Team Performance":"團隊業績",
+    "Dividend":"分紅",
+    "Trading dividend":"交易分紅",
+    "Shareholder Rewards":"股東獎勵",
+    "Team leader reward":"團隊長獎勵",
+    "Team bonus":"團隊分紅",
+    "No inviter":"沒有邀請人",
+    "The inviter is invalid":"邀請人無效"
 }

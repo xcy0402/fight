@@ -3140,5 +3140,21 @@
   "%percent%% of total supply": "%percent%% of total supply",
   "Your deposit value in USD": "Your deposit value in USD",
   "Min deposit USD": "Min deposit USD",
-  "Savings": "Savings"
+  "Savings": "Savings",
+  "Dividend has been distributed":"Dividend has been distributed",
+  "Remaining dividends":"Remaining dividends",
+  "To be collected":"To be collected",
+  "Next collection time": "Next collection time",
+  "Receiving":"Receiving",
+  "Invitation link":"Invitation link",
+  "Summary":"Summary",
+  "Investment amount":"Investment amount",
+  "Team Performance":"Team Performance",
+  "Dividend":"Dividend",
+  "Trading dividend":"Trading dividend",
+  "Shareholder Rewards": "Shareholder Rewards",
+  "Team leader reward": "Team leader reward",
+  "Team bonus":"Team bonus",
+  "No inviter":"No inviter",
+  "The inviter is invalid":"The inviter is invalid"
 }

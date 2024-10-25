@@ -83,7 +83,7 @@ const IncomeCard: React.FC<{
                             </Flex>
                             <Flex flexDirection="column">
                                 <Text fontSize="12px" color="textSubtle" lineHeight="120%">
-                                    {type == 'Trade' ? '已分紅' : t('Claimed')}
+                                    {type == 'Trade' ? t('Dividend has been distributed') : t('Claimed')}
                                 </Text>
                                 <Text fontSize="16px" bold lineHeight="120%">
                                     {value1 || 0}
@@ -91,7 +91,7 @@ const IncomeCard: React.FC<{
                             </Flex>
                             <Flex flexDirection="column">
                                 <Text fontSize="12px" color="textSubtle" lineHeight="120%">
-                                    {type == 'Trade' ? '剩餘分紅' : t('to be claimed')}
+                                    {type == 'Trade' ? t('Remaining dividends') : t('to be claimed')}
                                 </Text>
                                 <Text fontSize="16px" bold lineHeight="120%">
                                     {value2 || 0}
@@ -101,12 +101,12 @@ const IncomeCard: React.FC<{
                     </FlexGap>
                     {
                       !!nextTime&&  <Text fontSize="12px" color="textSubtle" lineHeight="120%">
-                        下次领取时间:{formatTime(Number(nextTime.toString()))}
+                        {t('Next collection time')}:{formatTime(Number(nextTime.toString()))}
                     </Text>
                     }
                     {type == 'Trade' ? null :
                         <Button width="100%" mt="auto" disabled={isLoading|| (!Number(value2) || (!!nextTime && Number(nextTime) * 1000 > new Date().getTime()))} onClick={receive} endIcon={isLoading ? spinnerIcon : undefined}>
-                            {isLoading ? '领取中' : t('Claim')}
+                            {isLoading ? t('Receiving') : t('Claim')}
                         </Button>
                     }
                 </FlexGap>

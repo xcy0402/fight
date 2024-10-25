@@ -80,10 +80,10 @@ export default function ModelTab() {
 
         if (!isShareholder) {
           if (!ref && nftId == 0) {
-            throw new Error('没有邀请人')
+            throw new Error(t('No inviter'))
           }
           if (ref && nftId == 0 && teamId == 0) {
-            throw new Error('邀请人无效')
+            throw new Error(t('The inviter is invalid'))
           }
         }
 
@@ -103,7 +103,7 @@ export default function ModelTab() {
         (nftId == 0) ? null :
           <>
             <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
-              邀请链接
+              {t('Invitation link')}
             </Heading>
             <FlexGap flexDirection="column" mb="24px" gap="8px">
               <CopyAddress tooltipMessage={t('Copied')} account={`${window.location.protocol}//${window.location.host}?ref=${account ?? ''}`} />

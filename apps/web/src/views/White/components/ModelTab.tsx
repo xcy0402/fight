@@ -99,17 +99,7 @@ export default function ModelTab() {
     });
   return (
     <>
-      {
-        (nftId == 0) ? null :
-          <>
-            <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
-              {t('Invitation link')}
-            </Heading>
-            <FlexGap flexDirection="column" mb="24px" gap="8px">
-              <CopyAddress tooltipMessage={t('Copied')} account={`${window.location.protocol}//${window.location.host}?ref=${account ?? ''}`} />
-            </FlexGap>
-          </>
-      }
+      
       <Heading scale="xl" color="secondary" mt={['0px', '0px', '0px']} mb={['24px', '24px', '24px']}>
         {t('Teams')}ID: # {nftId == 0 ? (teamId == 0 ? '' : Number(teamId)) : Number(nftId)}
       </Heading>

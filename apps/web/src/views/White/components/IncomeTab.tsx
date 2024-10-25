@@ -7,7 +7,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Address, useContractReads } from 'wagmi'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useGetNftId, getFTPWhBhContract, useGetIncome } from '../hooks/useGetIncome';
-import { formatNumber, getBalanceAmount, getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { getBalanceAmount, getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError';
@@ -23,6 +23,22 @@ const ValueText = styled(Text)`
   font-size: 16px;
   font-weight: 400;
 `
+export function formatNumber(number, decimalPlaces = 6) {
+    if (!number || isNaN(number)) return 0;
+    if (Number.isInteger(Number(number))) {
+        // 如果是整数，返回整数部分
+        return number.toString();
+    } else {
+        // 如果是小数，保留指定位数的小数但不做四舍五入
+        let str = number.toString();
+        let decimalIndex = str.indexOf('.');
+        if (decimalIndex !== -1) {
+            return parseFloat(str.slice(0, decimalIndex + decimalPlaces + 1));
+        } else {
+            return number;
+        }
+    }
+}
 export default function IncomeTab() {
     const { isDesktop, isMobile } = useMatchBreakpoints()
     const { t } = useTranslation()
@@ -77,13 +93,13 @@ export default function IncomeTab() {
                     <Text fontSize={14} color="textSubtle" textTransform="uppercase">
                         {t('Investment amount')}
                     </Text>
-                    <ValueText>{investmentAmountStr}$</ValueText>
+                    <ValueText>{formatNumber(investmentAmountStr) }$</ValueText>
                 </Flex>
                 <Flex width='100%' alignItems='center' justifyContent='space-between'>
                     <Text fontSize={14} color="textSubtle" textTransform="uppercase">
                         {t('Team Performance')}
                     </Text>
-                    <ValueText>{performanceAmountStr}$</ValueText>
+                    <ValueText>{formatNumber(performanceAmountStr) }$</ValueText>
                 </Flex>
                 <Flex></Flex>
             </SumBox>

@@ -8,6 +8,7 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import { getFTPWhBhContract } from '../hooks/useGetIncome';
 import { useState } from 'react';
 import dayjs from 'dayjs'
+import {formatNumber} from './IncomeTab';
 type BenefitCardType = 'Shareholders' | 'TeamLeader' | 'Team' | 'Trade'
 const StyledCard = styled(Card)`
   height: 100%;
@@ -86,7 +87,7 @@ const IncomeCard: React.FC<{
                                     {type == 'Trade' ? t('Dividend has been distributed') : t('Claimed')}
                                 </Text>
                                 <Text fontSize="16px" bold lineHeight="120%">
-                                    {value1 || 0}
+                                    { formatNumber(value1)  || 0}
                                 </Text>
                             </Flex>
                             <Flex flexDirection="column">
@@ -94,13 +95,13 @@ const IncomeCard: React.FC<{
                                     {type == 'Trade' ? t('Remaining dividends') : t('to be claimed')}
                                 </Text>
                                 <Text fontSize="16px" bold lineHeight="120%">
-                                    {value2 || 0}
+                                    {formatNumber(value2) || 0}
                                 </Text>
                             </Flex>
                         </FlexGap>
                     </FlexGap>
                     {
-                      !!nextTime&&  <Text fontSize="12px" color="textSubtle" lineHeight="120%">
+                      (!!nextTime&&(!!nextTime && Number(nextTime) * 1000 > new Date().getTime()) ) &&  <Text fontSize="12px" color="textSubtle" lineHeight="120%">
                         {t('Next collection time')}:{formatTime(Number(nextTime.toString()))}
                     </Text>
                     }

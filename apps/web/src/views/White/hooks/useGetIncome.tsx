@@ -170,9 +170,9 @@ export const useGetIsShareholder = () => {
     enabled: !!account,
     args: [account, 0, 200],
   })
-  console.log(data)
+  console.log(data instanceof Array && data.length > 0)
   return {
-    isShareholder: data ? JSON.stringify(data) !== '[]' : false,
+    isShareholder: data ? data instanceof Array && data.length > 0 : false,
   }
 }
 

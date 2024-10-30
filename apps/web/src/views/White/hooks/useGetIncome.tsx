@@ -211,6 +211,7 @@ export function useDividendRatio() {
   console.log('totalSupplytotalSupply', totalSupply)
   const num = new BigNumber((banlace || 0).toString())
     .dividedBy(new BigNumber((totalSupply || 0).toString()))
+    .multipliedBy(100)
     .toString()
   return {
     dividendRatio: num,

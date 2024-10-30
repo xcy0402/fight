@@ -10,14 +10,18 @@ const useTheme = () => {
   const { resolvedTheme, setTheme } = useNextTheme()
   const theme = useContext(StyledThemeContext)!
 
-  const handleSwitchTheme = useCallback(() => {
-    try {
-      setTheme('dark')
-      Cookie.set(COOKIE_THEME_KEY, 'dark', { domain: THEME_DOMAIN })
-    } catch (err) {
-      // ignore set cookie error for perp theme
-    }
-  }, [setTheme])
+  const handleSwitchTheme = useCallback(
+    (themeValue: 'dark' | 'light') => {
+      try {
+        console.log(themeValue)
+        setTheme('dark')
+        Cookie.set(COOKIE_THEME_KEY, 'dark', { domain: THEME_DOMAIN })
+      } catch (err) {
+        // ignore set cookie error for perp theme
+      }
+    },
+    [setTheme],
+  )
 
   return useMemo(
     () => ({ isDark: resolvedTheme === 'dark', theme, setTheme: handleSwitchTheme }),

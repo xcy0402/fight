@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
 import { StyledMenuItemProps } from "./types";
 
+// background-color: ${theme.colors.primary};
+// background: ${({ theme }) => theme.colors.tertiary};
+
 export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
   position: relative;
 
@@ -14,7 +17,7 @@ export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
         bottom: 0;
         height: 4px;
         width: 100%;
-        background-color: ${theme.colors.primary};
+        background: linear-gradient(173deg,#2EE6FF -6%,  #B73CFF 57%, #d43f8d );
         border-radius: 2px 2px 0 0;
       }
     `};
@@ -58,7 +61,6 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   `}
 
   &:hover {
-    background: ${({ theme }) => theme.colors.tertiary};
     ${({ $variant }) => $variant === "default" && "border-radius: 16px;"};
   }
 `;

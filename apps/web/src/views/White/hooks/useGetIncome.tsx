@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js'
 
 import { getContract } from 'utils/contractHelpers'
 
-import { useContractReads, useContractRead } from 'wagmi'
+import { useContractReads, useContractRead, erc20ABI } from 'wagmi'
 import { Abi, WalletClient } from 'viem'
 
 import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
@@ -83,6 +83,12 @@ export const useGetIncome = () => {
         functionName: 'getAccount',
         args: [account || '0x'],
       },
+      {
+        chainId,
+        ...PlusContract,
+        functionName: 'canClaims',
+        args: [account || '0x'],
+      },
     ],
   })
   return {
@@ -96,7 +102,7 @@ export const useGetIncome = () => {
     dividendsReceive: results ? (results[1].result ? results[1].result[3] : 0) : 0,
     dividendsTime: results ? (results[1].result ? results[1].result[7] : 0) : 0,
     tradeReceived: results ? (results[3].result ? results[3].result[4] : 0) : 0,
-    tradeReceive: results ? (results[3].result ? results[3].result[3] : 0) : 0,
+    tradeReceive: results ? (results[4].result ? results[4].result : 0) : 0,
   }
 }
 
@@ -173,6 +179,41 @@ export const useGetIsShareholder = () => {
   console.log(data instanceof Array && data.length > 0)
   return {
     isShareholder: data ? data instanceof Array && data.length > 0 : false,
+  }
+}
+
+export function useDividendRatio() {
+  const { account, chainId } = useAccountActiveChain()
+  const { nftId, teamId } = useGetNftId()
+  const id = Number(nftId) === 0 ? (Number(teamId) === 0 ? 0 : Number(teamId)) : Number(nftId)
+  const { data: address } = useContractRead({
+    chainId,
+    ...FTPContract,
+    functionName: 'teamAutoDividendTrackerMap',
+    enabled: !!account,
+    args: [id],
+  })
+  console.log('1111111111', address)
+  const { data: banlace } = useContractRead({
+    chainId,
+    abi: erc20ABI,
+    address: (address || '0x') as `0x${string}`,
+    functionName: 'balanceOf',
+    args: [account || '0x'],
+  })
+  console.log('banlacebanlace', banlace)
+  const { data: totalSupply } = useContractRead({
+    chainId,
+    abi: erc20ABI,
+    address: (address || '0x') as `0x${string}`,
+    functionName: 'totalSupply',
+  })
+  console.log('totalSupplytotalSupply', totalSupply)
+  const num = new BigNumber((banlace || 0).toString())
+    .dividedBy(new BigNumber((totalSupply || 0).toString()))
+    .toString()
+  return {
+    dividendRatio: num,
   }
 }
 

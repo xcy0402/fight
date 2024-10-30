@@ -18,11 +18,13 @@ export const CurrencyInputHeader = memo(({ title, subtitle }: Props) => {
 });
 
 export const CurrencyInputHeaderTitle = memo(({ children }: { children: ReactNode }) => (
-  <Heading as="h2">{children}</Heading>
+  <Heading as="h2" color="#f4eeff">
+    {children}
+  </Heading>
 ));
 
 export const CurrencyInputHeaderSubTitle = memo(({ children }: { children: ReactNode }) => (
-  <Text color="textSubtle" fontSize="14px" textAlign="center">
+  <Text color="#b8add2" fontSize="14px" textAlign="center">
     {children}
   </Text>
 ));

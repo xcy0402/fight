@@ -24,7 +24,7 @@ interface InotificationBellProps {
 const NotificationBell = ({ unread, toggleMenu }: InotificationBellProps) => {
   return (
     <BellIconContainer onClick={toggleMenu}>
-      <BellIcon height={24} width={24} color="textSubtle" />
+      <BellIcon height={24} width={24} color="white" />
       {unread ? <div className="notification-badge">{unread}</div> : null}
     </BellIconContainer>
   )

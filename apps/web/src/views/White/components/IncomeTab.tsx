@@ -7,7 +7,7 @@ import { useAccount } from 'wagmi'
 // import { Address, useContractReads } from 'wagmi'
 // import { useActiveChainId } from 'hooks/useActiveChainId'
 import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
-import { useGetNftId, useGetIncome, formatNumber } from '../hooks/useGetIncome'
+import { useGetNftId, useGetIncome, useDividendRatio, formatNumber } from '../hooks/useGetIncome'
 import IncomeCard from './IncomeCard'
 
 // import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
@@ -16,7 +16,7 @@ import IncomeCard from './IncomeCard'
 const SumBox = styled(Box)`
   width: 100%;
   border-radius: 12px;
-  background: #fff;
+  background: #4d3677;
   padding: 20px;
   margin-bottom: 40px;
 `
@@ -47,6 +47,7 @@ export default function IncomeTab() {
     tradeReceived,
     tradeReceive,
   } = useGetIncome()
+  const { dividendRatio } = useDividendRatio()
   const investmentAmountStr = getBalanceAmount(new BigNumber(investmentAmount?.toString() || 0)).toString()
   const performanceAmountStr = getBalanceAmount(new BigNumber(performanceAmount?.toString() || 0)).toString()
   const shareholdersReceivedStr = getBalanceAmount(new BigNumber(shareholdersReceived?.toString() || 0)).toString()
@@ -132,10 +133,11 @@ export default function IncomeTab() {
         <IncomeCard
           type="Team"
           functionName="claim"
-          dataText={t('Team bonus')}
+          dataText={t('Network dividend')}
           nextTime={dividendsTime}
           value1={dividendsReceivedStr}
           value2={dividendsReceiveStr}
+          value3={dividendRatio}
         />
       </Grid>
     </>

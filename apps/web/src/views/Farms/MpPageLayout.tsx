@@ -26,7 +26,7 @@ const FarmsMpPageLayout: React.FC<React.PropsWithChildren<unknown>> = ({ childre
 
   useEffect(() => {
     if (systemInfo) {
-      setTheme(systemInfo.theme)
+      // setTheme(systemInfo.theme)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [systemInfo])

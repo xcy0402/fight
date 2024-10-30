@@ -72,7 +72,7 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
               scrollLayerRef.current.scrollLeft -= SUBMENU_CHEVRON_CLICK_MOVE_PX;
             }}
           >
-            <ChevronLeftIcon />
+            <ChevronLeftIcon color="white" />
           </LeftMaskLayer>
         </AtomBox>
         <AtomBox display={{ xs: "block", md: "none" }} asChild>
@@ -86,7 +86,7 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
           >
             {hasOverflowing && (
               <NotificationDot show={hasHighlightedItem} color={highlightedItemColor}>
-                <ChevronRightIcon width="24px" height="24px" />
+                <ChevronRightIcon color="white" width="24px" height="24px" />
               </NotificationDot>
             )}
           </RightMaskLayer>
@@ -106,8 +106,8 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
                   target: "_blank",
                 }
               : {};
-              
-            const isActive = (activeItem=='/'&&href=='/swap') ?true: href === activeItem;
+
+            const isActive = activeItem === "/" && href === "/swap" ? true : href === activeItem;
 
             return (
               label && (
@@ -116,13 +116,13 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
                     href={href}
                     scrollLayerRef={scrollLayerRef}
                     isActive={isActive}
-                    isDisabled={href==''}
+                    isDisabled={href === ""}
                     variant="subMenu"
                     {...itemProps}
                     {...linkProps}
                     onClick={onClick}
                   >
-                    <FlexGap gap="10px" alignItems="center">
+                    <FlexGap color="white" gap="10px" alignItems="center">
                       {Icon && <Icon color={isActive ? "secondary" : "textSubtle"} mr="4px" />}
                       {label}
                       {LabelIcon ? <LabelIcon /> : null}
@@ -134,7 +134,7 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
                     </FlexGap>
                     {isExternalLink && (
                       <Box display={["none", null, "flex"]} style={{ alignItems: "center" }} ml="4px">
-                        <OpenNewIcon color="textSubtle" />
+                        <OpenNewIcon color="white" />
                       </Box>
                     )}
                   </MenuItem>

@@ -1,5 +1,5 @@
-import { scales, variants } from "./types";
 import { vars } from "../../css/vars.css";
+import { scales, variants } from "./types";
 
 export const scaleVariants = {
   [scales.MD]: {
@@ -66,5 +66,10 @@ export const styleVariants = {
     ":disabled": {
       background: vars.colors.disabled,
     },
+  },
+  [variants.CONNECT]: {
+    background: vars.colors.connect,
+    color: "contrast",
+    boxShadow: "0px 0.5px 1px 0px #ffffff inset, 0px 0px 4px 0px rgba(255,255,255,0.60) inset",
   },
 };

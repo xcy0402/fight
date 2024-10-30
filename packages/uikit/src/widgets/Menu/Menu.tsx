@@ -14,6 +14,7 @@ import { MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./conf
 import { MenuContext } from "./context";
 import { NavProps } from "./types";
 
+// background-color: ${({ theme }) => theme.nav.background};
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
@@ -27,7 +28,7 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
+  background: linear-gradient(172deg, #2ee6ff, #b73cff, #d43f8d);
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
 
@@ -97,6 +98,10 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
   const totalTopMenuHeight = isMounted && banner ? MENU_HEIGHT + topBannerHeight : MENU_HEIGHT;
 
   useEffect(() => {
+    toggleTheme(false);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
       const isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;
@@ -136,7 +141,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
       <AtomBox
         asChild
         minHeight={{
-          xs: "auto",
+          xs: "100vh",
           md: "100vh",
         }}
       >
@@ -150,18 +155,14 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
                   {/* <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" /> */}
 
                   <Box ml="24px">
-                  {subLinks ? (
-            <Flex justifyContent="space-around" overflow="hidden">
-              <SubMenuItems
-                items={subLinksWithoutMobile}
-                activeItem={activeSubItem}
-              />
-            </Flex>
-          ) : (
-            <div />
-          )}
+                    {subLinks ? (
+                      <Flex justifyContent="space-around" overflow="hidden">
+                        <SubMenuItems items={subLinksWithoutMobile} activeItem={activeSubItem} />
+                      </Flex>
+                    ) : (
+                      <div />
+                    )}
                   </Box>
-                  
                 </AtomBox>
               </Flex>
               <Flex alignItems="center" height="100%">
@@ -174,7 +175,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
                     langs={langs}
                     setLang={setLang}
                     buttonScale="xs"
-                    color="textSubtle"
+                    color="white"
                     hideLanguage
                   />
                 </Box>
@@ -182,37 +183,35 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               </Flex>
             </StyledNav>
           </FixedContainer>
-          
+          {/* <AtomBox display={{ xs: "none", md: "block" }}>
           {subLinks?(
-            <AtomBox display={{ xs: "none", md: "block" }}>
-          <Box mt={`${totalTopMenuHeight + 1}px`}></Box>
-          </AtomBox>
-          ):<div/>}
-          <AtomBox display={{ xs: "block", md: "none" }}>
             
-          {subLinks ? (
-            <Flex justifyContent="space-around" overflow="hidden">
-              <SubMenuItems
-                items={subLinksWithoutMobile}
-                mt={`${totalTopMenuHeight + 1}px`}
-                activeItem={activeSubItem}
-              />
-              {subLinksMobileOnly && subLinksMobileOnly?.length > 0 && (
+          <Box mt={`${totalTopMenuHeight + 1}px`}></Box>
+          
+          ):null}
+          </AtomBox> */}
+          <AtomBox display={{ xs: "block", md: "none" }}>
+            {subLinks ? (
+              <Flex justifyContent="space-around" background="#2b234d" overflow="hidden">
                 <SubMenuItems
-                  items={subLinksMobileOnly}
+                  items={subLinksWithoutMobile}
                   mt={`${totalTopMenuHeight + 1}px`}
                   activeItem={activeSubItem}
-                  isMobileOnly
                 />
-              )}
-            </Flex>
-          ) : (
-            <div />
-          )}
+                {subLinksMobileOnly && subLinksMobileOnly?.length > 0 && (
+                  <SubMenuItems
+                    items={subLinksMobileOnly}
+                    mt={`${totalTopMenuHeight + 1}px`}
+                    activeItem={activeSubItem}
+                    isMobileOnly
+                  />
+                )}
+              </Flex>
+            ) : (
+              <div />
+            )}
           </AtomBox>
-          
-          
-          
+
           <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
             <Inner>{children}</Inner>
           </BodyWrapper>

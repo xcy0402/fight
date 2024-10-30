@@ -2,6 +2,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import React, { ReactNode, InputHTMLAttributes } from 'react'
 import { styled } from 'styled-components'
 import { Text, Flex, Input, Box, Button, BoxProps, InputProps } from '@pancakeswap/uikit'
+import { formatNumber } from '../hooks/useGetIncome'
 
 export interface BalanceInputProps extends BoxProps {
   value: string | number
@@ -80,7 +81,7 @@ const StakeInput: React.FC<React.PropsWithChildren<BalanceInputProps>> = ({
           <Text>{t('Stake')}</Text>
           <Flex alignItems="center">
             <Text>
-              {t('Balance')}：{balance}
+              {t('Balance')}：{formatNumber(balance)}
             </Text>
             <Button scale="xs" mx="5px" p="4px 16px" variant="tertiary" onClick={setMax}>
               {t('Max')}

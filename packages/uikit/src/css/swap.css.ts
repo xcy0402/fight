@@ -19,7 +19,7 @@ export const inputVariants = recipe({
     textOverflow: "ellipsis",
     padding: 0,
     WebkitAppearance: "textfield",
-    color: vars.colors.text,
+    color: vars.colors.white,
     selectors: {
       "&::-webkit-search-decoration": {
         WebkitAppearance: "none",
@@ -70,7 +70,7 @@ export const inputContainerVariants = recipe({
   base: style([
     atoms({
       borderRadius: "default",
-      backgroundColor: "input",
+      backgroundColor: "bg1",
     }),
     style({
       selectors: {
@@ -109,12 +109,13 @@ export const pageVariants = recipe({
       alignItems: "center",
       width: "100%",
       height: "100%",
-      background: "gradientBubblegum",
+      background: "atomBoxBg",
       padding: "16px",
       paddingBottom: "0px",
     }),
     style({
-      backgroundSize: "auto",
+      background: "url('/images/box-bg.png') top no-repeat",
+      backgroundSize: "100% 100%",
     }),
     responsiveStyle({
       sm: {
@@ -149,7 +150,7 @@ export const iconButtonClass = style([
   atoms({
     borderRadius: "circle",
     cursor: "pointer",
-    color: "text",
+    color: "white",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

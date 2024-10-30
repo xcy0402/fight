@@ -193,11 +193,11 @@ const CurrencyInputPanel = memo(function CurrencyInputPanel({
                   <Skeleton width="24px" height="24px" variant="circle" />
                 ) : null}
                 {currencyLoading ? null : pair ? (
-                  <Text id="pair" bold>
+                  <Text id="pair" color="white" bold>
                     {pair?.token0.symbol}:{pair?.token1.symbol}
                   </Text>
                 ) : (
-                  <Text id="pair" bold>
+                  <Text id="pair" color="white" bold>
                     {(currency && currency.symbol && currency.symbol.length > 10
                       ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
                           currency.symbol.length - 5,
@@ -206,7 +206,7 @@ const CurrencyInputPanel = memo(function CurrencyInputPanel({
                       : currency?.symbol) || t('Select a currency')}
                   </Text>
                 )}
-                {!currencyLoading && !disableCurrencySelect && <ArrowDropDownIcon />}
+                {!currencyLoading && !disableCurrencySelect && <ArrowDropDownIcon color="white" />}
               </Flex>
             </CurrencySelectButton>
             {token && tokenAddress ? (

@@ -31,11 +31,14 @@ export function CurrencyInputPanel({
         flexDirection="column"
         flexWrap="nowrap"
         position="relative"
-        backgroundColor="backgroundAlt"
+        background="linear1"
+        borderRadius="default"
+        padding="1px"
         zIndex="1"
       >
         <AtomBox
           as="label"
+          background="bg1"
           className={SwapCSS.inputContainerVariants({
             showBridgeWarning: !!showBridgeWarning,
             error: Boolean(error),
@@ -45,7 +48,7 @@ export function CurrencyInputPanel({
             display="flex"
             flexDirection="row"
             flexWrap="nowrap"
-            color="text"
+            color="white"
             fontSize="12px"
             lineHeight="16px"
             px="16px"

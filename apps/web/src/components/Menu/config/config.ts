@@ -76,7 +76,7 @@ const config: (
           href: '/liquidity',
         },
         {
-          label: '白洞對抗',
+          label: t('white hole confrontation'),
           href: '/white-hole',
         },
         {
@@ -86,7 +86,7 @@ const config: (
           //   languageCode,
           //   isDark,
           // }),
-          href:'',
+          href: '',
           confirmModalId: 'usCitizenConfirmModal',
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },

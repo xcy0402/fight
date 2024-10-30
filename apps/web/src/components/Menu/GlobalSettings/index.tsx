@@ -21,7 +21,7 @@ const GlobalSettings = ({ color, mr = '8px', mode, ...rest }: Props) => {
         id={`open-settings-dialog-button-${mode}`}
         {...rest}
       >
-        <CogIcon height={24} width={24} color={color || 'textSubtle'} />
+        <CogIcon height={24} width={24} color={color || 'white'} />
       </IconButton>
     </Flex>
   )

@@ -1,6 +1,7 @@
-import { styled, css } from "styled-components";
-import { Flex, Box } from "../Box";
+import { css, styled } from "styled-components";
+import { Box, Flex } from "../Box";
 
+// background-color: ${({ theme }) => `${theme.colors.backgroundAlt2}`};
 export const SubMenuItemWrapper = styled(Flex)<{ $isMobileOnly: boolean }>`
   ${({ theme }) => theme.mediaQueries.sm} {
     ${({ $isMobileOnly }) => ($isMobileOnly ? "display:none" : "")};
@@ -21,7 +22,6 @@ const StyledSubMenuItems = styled(Flex)`
     display: flex;
   }
   flex-grow: 1;
-  background-color: ${({ theme }) => `${theme.colors.backgroundAlt2}`};
   box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);
   overflow-x: scroll;
   scrollbar-width: none;
@@ -51,13 +51,30 @@ const maskSharedStyle = css`
   }
 `;
 
+// export const LeftMaskLayer = styled.div`
+//   ${maskSharedStyle}
+//   left: 0px;
+//   background: ${({ theme }) =>
+//     theme.isDark
+//       ? `linear-gradient(90deg, #27262c 29.76%, rgba(39,38,44, 0) 100%)`
+//       : `linear-gradient(90deg, #ffffff 29.76%, rgba(255, 255, 255, 0) 100%)`};
+// `;
+
+// export const RightMaskLayer = styled.div`
+//   ${maskSharedStyle}
+//   right: 0px;
+//   background: ${({ theme }) =>
+//     theme.isDark
+//       ? `linear-gradient(270deg, #27262c 0%, rgba(39,38,44, 0) 87.5%)`
+//       : `linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 87.5%)`};
+// `;
 export const LeftMaskLayer = styled.div`
   ${maskSharedStyle}
   left: 0px;
   background: ${({ theme }) =>
     theme.isDark
       ? `linear-gradient(90deg, #27262c 29.76%, rgba(39,38,44, 0) 100%)`
-      : `linear-gradient(90deg, #ffffff 29.76%, rgba(255, 255, 255, 0) 100%)`};
+      : `linear-gradient(90deg, #2b234d 29.76%, rgba(43, 35, 77, 0) 100%)`};
 `;
 export const RightMaskLayer = styled.div`
   ${maskSharedStyle}
@@ -65,7 +82,7 @@ export const RightMaskLayer = styled.div`
   background: ${({ theme }) =>
     theme.isDark
       ? `linear-gradient(270deg, #27262c 0%, rgba(39,38,44, 0) 87.5%)`
-      : `linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 87.5%)`};
+      : `linear-gradient(270deg, #2b234d 0%, rgba(43, 35, 77, 0) 87.5%)`};
 `;
 
 export const StyledSubMenuItemWrapper = styled(Box)`

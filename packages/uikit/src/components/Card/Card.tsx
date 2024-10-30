@@ -5,7 +5,7 @@ import { CardProps } from "./types";
 const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   ribbon,
   children,
-  background,
+  background = "linear-gradient(150deg,#3b265e,#533b7f)",
   innerCardProps,
   ...props
 }) => {

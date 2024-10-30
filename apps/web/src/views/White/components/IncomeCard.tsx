@@ -47,10 +47,10 @@ const IncomeCard: React.FC<{
   dataText?: string
   value1?: string | number
   value2?: string | number
+  value3?: string | number
   functionName?: string
   nextTime?: string | number
-  onClick?: () => void
-}> = ({ type, dataText, onClick, value1 = 0, value2 = 0, functionName = '', nextTime }) => {
+}> = ({ type, dataText, value1 = 0, value2 = 0, value3 = 0, functionName = '', nextTime }) => {
   const { callWithGasPrice } = useCallWithGasPrice()
 
   const { fetchWithCatchTxError } = useCatchTxError()
@@ -98,6 +98,16 @@ const IncomeCard: React.FC<{
                   {formatNumber(value2) || 0}
                 </Text>
               </Flex>
+              {type === 'Team' ? (
+                <Flex flexDirection="column">
+                  <Text fontSize="12px" color="textSubtle" lineHeight="120%">
+                    {t('Dividend ratio')}
+                  </Text>
+                  <Text fontSize="16px" bold lineHeight="120%">
+                    {formatNumber(value3) || 0}%
+                  </Text>
+                </Flex>
+              ) : null}
             </FlexGap>
           </FlexGap>
           {!!nextTime && !!nextTime && Number(nextTime) * 1000 > new Date().getTime() && (

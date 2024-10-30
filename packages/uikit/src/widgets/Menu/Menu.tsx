@@ -184,7 +184,13 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
             </StyledNav>
           </FixedContainer>
           <AtomBox display={{ xs: "none", md: "block" }}>
-            {subLinks ? <Box mt={`${totalTopMenuHeight + 1}px`}>1</Box> : <div />}
+            {subLinks ? (
+              <Box mt={`${totalTopMenuHeight + 1}px`}>
+                <text style={{ color: "transparent" }}>1</text>
+              </Box>
+            ) : (
+              <div />
+            )}
           </AtomBox>
           <AtomBox display={{ xs: "block", md: "none" }}>
             {subLinks ? (

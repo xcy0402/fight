@@ -183,13 +183,9 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               </Flex>
             </StyledNav>
           </FixedContainer>
-          {/* <AtomBox display={{ xs: "none", md: "block" }}>
-          {subLinks?(
-            
-          <Box mt={`${totalTopMenuHeight + 1}px`}></Box>
-          
-          ):null}
-          </AtomBox> */}
+          <AtomBox display={{ xs: "none", md: "block" }}>
+            {subLinks ? <Box mt={`${totalTopMenuHeight + 1}px`}>1</Box> : <div />}
+          </AtomBox>
           <AtomBox display={{ xs: "block", md: "none" }}>
             {subLinks ? (
               <Flex justifyContent="space-around" background="#2b234d" overflow="hidden">

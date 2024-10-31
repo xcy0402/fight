@@ -176,7 +176,6 @@ export const useGetIsShareholder = () => {
     enabled: !!account,
     args: [account, 0, 200],
   })
-  console.log(data instanceof Array && data.length > 0)
   return {
     isShareholder: data ? data instanceof Array && data.length > 0 : false,
   }
@@ -193,7 +192,6 @@ export function useDividendRatio() {
     enabled: !!account,
     args: [id],
   })
-  console.log('1111111111', address)
   const { data: banlace } = useContractRead({
     chainId,
     abi: erc20ABI,
@@ -201,14 +199,12 @@ export function useDividendRatio() {
     functionName: 'balanceOf',
     args: [account || '0x'],
   })
-  console.log('banlacebanlace', banlace)
   const { data: totalSupply } = useContractRead({
     chainId,
     abi: erc20ABI,
     address: (address || '0x') as `0x${string}`,
     functionName: 'totalSupply',
   })
-  console.log('totalSupplytotalSupply', totalSupply)
   const num = new BigNumber((banlace || 0).toString())
     .dividedBy(new BigNumber((totalSupply || 0).toString()))
     .multipliedBy(100)
@@ -219,7 +215,7 @@ export function useDividendRatio() {
 }
 
 export function formatNumber(number, decimalPlaces = 6) {
-  if (!number || Number.isNaN(number)) return 0
+  if (!number || Number.isNaN(number) || number === 'NaN') return 0
   if (Number.isInteger(Number(number))) {
     // 如果是整数，返回整数部分
     return number.toString()

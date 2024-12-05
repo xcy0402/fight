@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "pancakeswap",
-  "title": "FightSwap Token List",
-  "description": "Schema for lists of tokens compatible with the FightSwap Interface, including Uniswap standard and FightSwap Aptos",
+  "title": "HBSwap Token List",
+  "description": "Schema for lists of tokens compatible with the HBSwap Interface, including Uniswap standard and HBSwap Aptos",
   "definitions": {
     "Version": {
       "type": "object",

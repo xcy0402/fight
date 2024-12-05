@@ -93,9 +93,7 @@ const CakeStaking = () => {
             headSlot={
               <QuestionHelper
                 size="20px"
-                text={t(
-                  'Boost your FightSwap farming APR by up to 2.5x. Aquire more veCAKE to receive a higher boost.',
-                )}
+                text={t('Boost your HBSwap farming APR by up to 2.5x. Aquire more veCAKE to receive a higher boost.')}
                 placement="top"
                 ml="4px"
               />
@@ -122,7 +120,7 @@ const CakeStaking = () => {
               <QuestionHelper
                 size="20px"
                 text={t(
-                  'Use your veCAKE as your IFO Public Sales commit credits. Aquire more veCAKE to commit more in the next FightSwap IFOs.',
+                  'Use your veCAKE as your IFO Public Sales commit credits. Aquire more veCAKE to commit more in the next HBSwap IFOs.',
                 )}
                 placement="top"
                 ml="4px"

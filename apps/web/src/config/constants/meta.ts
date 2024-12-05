@@ -4,7 +4,7 @@ import { ASSET_CDN } from './endpoints'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'FightSwap',
+  title: 'HBSwap',
   description: 'Trade, earn, and own crypto on the all-in-one multichain DEX',
   // image: `${ASSET_CDN}/web/og/hero.jpg`,
 }
@@ -58,7 +58,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/pancake-squad': { basePath: true, title: t('Pancake Squad') },
       '/pottery': { basePath: true, title: t('Pottery'), image: `${ASSET_CDN}/web/og/pottery.jpg` },
     },
-    defaultTitleSuffix: t('FightSwap'),
+    defaultTitleSuffix: t('HBSwap'),
   }
 }
 

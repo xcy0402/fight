@@ -1,6 +1,6 @@
+import { Box, Link } from '@pancakeswap/uikit'
 import Trans from 'components/Trans'
 import { styled } from 'styled-components'
-import { Link, Box } from '@pancakeswap/uikit'
 
 const InlineLink = styled(Link)`
   display: inline;
@@ -34,7 +34,7 @@ const config = [
       </Box>,
       <Box mt="1rem">
         <Trans>
-          In the Public Sale, everyone with an active FightSwap profile can commit. However the maximum amount of CAKE
+          In the Public Sale, everyone with an active HBSwap profile can commit. However the maximum amount of CAKE
           users can commit, is equal to the number of iCAKE they have.
         </Trans>
       </Box>,
@@ -76,7 +76,7 @@ const config = [
       </Box>,
       <Box mt="1rem">
         <Trans>
-          Just remember: you need an active FightSwap Profile in order to participate in Private and Public Sales.
+          Just remember: you need an active HBSwap Profile in order to participate in Private and Public Sales.
         </Trans>
       </Box>,
     ],

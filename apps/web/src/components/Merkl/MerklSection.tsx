@@ -105,7 +105,7 @@ export function MerklSection({
       {isStakedInMCv3 ? (
         <Message variant="warning">
           <MessageText color="textSubtle">
-            To earn rewards on Merkl, unstake this position from FightSwap Farms.
+            To earn rewards on Merkl, unstake this position from HBSwap Farms.
             <br />
             {learnMoreComp}
           </MessageText>
@@ -130,7 +130,7 @@ export function MerklSection({
               external
               color="currentColor"
               style={{ display: 'inline-flex' }}
-              href="https://merkl.angle.money/?times=active%2Cfuture%2C&phrase=FightSwap"
+              href="https://merkl.angle.money/?times=active%2Cfuture%2C&phrase=HBSwap"
             >
               {t('here')}
             </Link>{' '}

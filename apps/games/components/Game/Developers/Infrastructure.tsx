@@ -98,7 +98,7 @@ const GameBenefitsList = [
   },
   {
     title: <Trans>Explore Top Blockchains</Trans>,
-    desc: <Trans>FightSwap operates on 9 popular blockchains, welcoming developers from diverse ecosystems</Trans>,
+    desc: <Trans>HBSwap operates on 9 popular blockchains, welcoming developers from diverse ecosystems</Trans>,
     imgUrl: `${ASSET_CDN}/web/game/developers/bring-your-game-4.png`,
   },
 ]
@@ -137,7 +137,7 @@ export const Infrastructure = () => {
         <Flex pt={['0', '0', '0', '0', '24px']} alignItems="center" flexDirection="column" justifyContent="center">
           <GradientLogo height="36px" width="36px" mb="24px" />
           <Heading maxWidth={['745px']} textAlign="center" scale="xl" mb="32px">
-            {t('Bring Your Game to Life on FightSwap')}
+            {t('Bring Your Game to Life on HBSwap')}
           </Heading>
           <StyledGameBenefitsListContainer>
             {GameBenefitsList.map((benefit, index) => (

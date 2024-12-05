@@ -1,15 +1,15 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { SmartRouterTrade, SmartRouter } from '@pancakeswap/smart-router/evm'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@pancakeswap/sdk'
-import { BackForwardIcon, Button, QuestionHelper, Text, Link, AutoColumn, Dots, Flex } from '@pancakeswap/uikit'
+import { SmartRouter, SmartRouterTrade } from '@pancakeswap/smart-router/evm'
+import { AutoColumn, BackForwardIcon, Button, Dots, Flex, Link, QuestionHelper, Text } from '@pancakeswap/uikit'
 import { formatAmount } from '@pancakeswap/utils/formatFractions'
 import { AutoRow, RowBetween, RowFixed } from 'components/Layout/Row'
-import { useState, memo, useMemo } from 'react'
+import { CurrencyLogo } from 'components/Logo'
+import { BUYBACK_FEE, LP_HOLDERS_FEE, TOTAL_FEE, TREASURY_FEE } from 'config/constants/info'
+import { memo, useMemo, useState } from 'react'
 import { Field } from 'state/swap/actions'
 import { styled } from 'styled-components'
-import { CurrencyLogo } from 'components/Logo'
 import { warningSeverity } from 'utils/exchange'
-import { BUYBACK_FEE, LP_HOLDERS_FEE, TOTAL_FEE, TREASURY_FEE } from 'config/constants/info'
 import { formatExecutionPrice as mmFormatExecutionPrice } from 'views/Swap/MMLinkPools/utils/exchange'
 
 import FormattedPriceImpact from '../../components/FormattedPriceImpact'
@@ -187,7 +187,7 @@ export const SwapModalFooter = memo(function SwapModalFooter({
                       </Text>
                       :{' '}
                       {t(
-                        'FightSwap does not charge any fees for trades. However, the market makers charge an implied fee of 0.05% - 0.25% (non-stablecoin) / 0.01% (stablecoin) factored into the quotes provided by them.',
+                        'HBSwap does not charge any fees for trades. However, the market makers charge an implied fee of 0.05% - 0.25% (non-stablecoin) / 0.01% (stablecoin) factored into the quotes provided by them.',
                       )}
                     </Text>
                   </>

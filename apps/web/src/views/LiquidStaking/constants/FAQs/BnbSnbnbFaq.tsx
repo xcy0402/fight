@@ -65,8 +65,7 @@ export const BnbSnbnbFaq = () => [
           Helio
         </Link>
         <Trans>
-          FightSwap will be supporting new liquid staking strategies for users to maximise utility and yield on
-          BnbChain
+          HBSwap will be supporting new liquid staking strategies for users to maximise utility and yield on BnbChain
         </Trans>
       </>
     ),
@@ -91,7 +90,7 @@ export const BnbSnbnbFaq = () => [
           https://www.synclub.io/en/liquid-staking/BNB
         </Link>
         <Trans>
-          to unstake your SnBNB. FightSwap is working to support a conversion contract on our liquid staking page to
+          to unstake your SnBNB. HBSwap is working to support a conversion contract on our liquid staking page to
           convert SnBNB back to BNB seamlessly.
         </Trans>
       </>

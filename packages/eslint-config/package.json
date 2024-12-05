@@ -1,7 +1,7 @@
 {
   "name": "@pancakeswap/eslint-config-pancake",
   "version": "1.2.0",
-  "description": "Eslint config for FightSwap",
+  "description": "Eslint config for HBSwap",
   "main": "lib/index.js",
   "files": [
     "lib"

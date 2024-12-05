@@ -1,5 +1,5 @@
 {
-  "name": "FightSwap BNB Chain MM",
+  "name": "HBSwap BNB Chain MM",
   "timestamp": "2023-06-29T21:24:06.707Z",
   "version": {
     "major": 0,
@@ -7,12 +7,6 @@
     "patch": 4
   },
   "logoURI": "http://192.168.3.13:3000/images/fight.png",
-  "keywords": [
-    "pancakeswap",
-    "mm",
-    "bnb"
-  ],
-  "tokens": [
-   
-  ]
+  "keywords": ["pancakeswap", "mm", "bnb"],
+  "tokens": []
 }

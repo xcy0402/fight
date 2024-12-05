@@ -159,7 +159,7 @@ const useTradeBlockData = () => {
   const { push } = useRouter()
   const perpetualUrl = useMemo(() => getPerpetualUrl({ chainId, languageCode: code, isDark }), [chainId, code, isDark])
   const [onUSCitizenModalPresent] = useModal(
-    <USCitizenConfirmModal title={t('FightSwap Perpetuals')} id={IdType.PERPETUALS} />,
+    <USCitizenConfirmModal title={t('HBSwap Perpetuals')} id={IdType.PERPETUALS} />,
     false,
     false,
     'usCitizenConfirmModal',
@@ -256,7 +256,7 @@ const useEarnBlockData = () => {
       },
       {
         title: t('Position Manager'),
-        description: t('Automate your FightSwap v3 liquidity'),
+        description: t('Automate your HBSwap v3 liquidity'),
         ctaTitle: t('Stake Now'),
         image: `${ASSET_CDN}/web/landing/earn-pm.png`,
         defaultImage: `${ASSET_CDN}/web/landing/earn-pm-purple.png`,
@@ -273,7 +273,7 @@ const useNftGameBlockData = () => {
     return [
       {
         title: t('Gaming Marketplace'),
-        description: t('Play, Build and Connect on FightSwap'),
+        description: t('Play, Build and Connect on HBSwap'),
         ctaTitle: t('Play Now'),
         image: `${ASSET_CDN}/web/landing/game-pancake-protectors.png`,
         defaultImage: `${ASSET_CDN}/web/landing/game-pancake-protectors-purple.png`,

@@ -33,7 +33,7 @@ const Menu = (props) => {
   const { pathname } = useRouter()
 
   const [onUSCitizenModalPresent] = useModal(
-    <USCitizenConfirmModal title={t('FightSwap Perpetuals')} id={IdType.PERPETUALS} />,
+    <USCitizenConfirmModal title={t('HBSwap Perpetuals')} id={IdType.PERPETUALS} />,
     false,
     false,
     'usCitizenConfirmModal',
@@ -52,7 +52,7 @@ const Menu = (props) => {
   const getFooterLinks = useMemo(() => {
     return footerLinks(t)
   }, [t])
-  
+
   return (
     <>
       <UikitMenu

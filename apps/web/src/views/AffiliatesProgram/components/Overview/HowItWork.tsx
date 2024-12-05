@@ -1,5 +1,5 @@
-import { Flex, Heading, Text, Card, Box } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
+import { Box, Card, Flex, Heading, Text } from '@pancakeswap/uikit'
 import GradientLogo from 'views/Home/components/GradientLogoSvg'
 
 const HowItWork = () => {
@@ -22,10 +22,10 @@ const HowItWork = () => {
         {t('are meant to be shared')}
       </Heading>
       <Text textAlign="center" color="textSubtle">
-        {t('Together we can make the FightSwap community even stronger')}
+        {t('Together we can make the HBSwap community even stronger')}
       </Text>
       <Text textAlign="center" color="textSubtle" bold mb="32px">
-        {t('How do you Become a FightSwap Affiliate?')}
+        {t('How do you Become a HBSwap Affiliate?')}
       </Text>
       <Flex width={['280px', '280px', '280px', '888px']} flexDirection={['column', 'column', 'column', 'row']}>
         <Flex width={['100%', '100%', '100%', '33.33%']} m={['0 0 16px 0', '0 0 16px 0', '0 0 16px 0', '0 16px 0 0']}>

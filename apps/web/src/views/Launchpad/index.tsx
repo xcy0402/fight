@@ -70,12 +70,20 @@ export default function Launchpad() {
   }, [fromval, account, priceStr])
 
   const isDisabled = useMemo(() => {
+    console.log(
+      !Number(fromval),
+      isLoading,
+      fomBalance,
+      Number(fromval) < Number(minBNBStr),
+      Number(fromval) > Number(maxBNBStr),
+      Number(fromval) < Number(fomBalance),
+    )
     return (
       !Number(fromval) ||
       isLoading ||
       Number(fromval) < Number(minBNBStr) ||
       Number(fromval) > Number(maxBNBStr) ||
-      Number(fromval) < Number(fomBalance)
+      Number(fromval) > Number(fomBalance)
     )
   }, [isLoading, fromval, minBNBStr, maxBNBStr, fomBalance])
 
@@ -163,7 +171,7 @@ export default function Launchpad() {
                 disabled={isDisabled}
                 onClick={handleConfirm}
               >
-                {isLoading ? t('Confirming') : t('Enable')}
+                {isLoading ? t('Confirming') : t('qd')}
               </Button>
             ) : (
               <ConnectWalletButton />
@@ -179,13 +187,13 @@ export default function Launchpad() {
             </Text>
           </Flex>
           <Text fontSize={14} color="#5D6673" lineHeight="24px" fontWeight="600">
-            {t('Launchpad-1', {
+            {t('1. Get %b% for every %a%', {
               a: '1BNB',
               b: `${priceStr || 0} HB`,
             })}
           </Text>
           <Text fontSize={14} color="#5D6673" lineHeight="24px" fontWeight="600">
-            {t('Launchpad-2', {
+            {t('2. Minimum %a%, maximum %b% and an integer multiple of %a%', {
               a: `${minBNBStr} BNB`,
               b: `${maxBNBStr} BNB`,
             })}

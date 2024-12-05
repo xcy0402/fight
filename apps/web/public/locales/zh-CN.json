@@ -3165,9 +3165,10 @@
   "get": "获得",
   "send": "发送",
   "smgz": "私募规则：",
-  "Launchpad-1": "1.每 ${a} 获得 ${b}",
-  "Launchpad-2": "2.最少 ${a}、最多${b}并且是${a}的整数倍数",
+  "1. Get %b% for every %a%": "1.每 %a% 获得 %b%",
+  "2. Minimum %a%, maximum %b% and an integer multiple of %a%": "2.最少 %a%、最多%b%并且是%a%的整数倍数",
   "Launchpad-3": "参与人数",
   "Launchpad-4": "参与金额",
+  "qd": "启动",
   "Launchpad": "启动板"
 }

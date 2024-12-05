@@ -3165,9 +3165,10 @@
   "get": "Get",
   "send": "Send",
   "smgz": "Private placement rules:",
-  "Launchpad-1": "1. Get ${b} for every ${a}",
-  "Launchpad-2": "2. Minimum ${a}, maximum ${b} and an integer multiple of ${a}",
+  "1. Get %b% for every %a%": "1. Get %b% for every %a%",
+  "2. Minimum %a%, maximum %b% and an integer multiple of %a%": "2. Minimum %a%, maximum %b% and an integer multiple of %a%",
   "Launchpad-3": "Number of participants",
   "Launchpad-4": "Participation amount",
+  "qd": "Start",
   "Launchpad": "Launchpad"
 }

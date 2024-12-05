@@ -26,9 +26,9 @@
 // import VI from '../../../locales/vi-VN.json';
 // import ZHCN from '../../../locales/zh-CN.json';
 // import ZHTW from '../../../locales/zh-TW.json';
-import { EN } from './config/languages';
-const publicUrl = 'https://static.fightdefi.pro/locales'
-// const publicUrl = '../../../locales'
+import { EN } from './config/languages'
+// const publicUrl = 'https://static.fightdefi.pro/locales'
+const publicUrl = '/locales'
 
 export const LS_KEY = 'pancakeswap_language'
 

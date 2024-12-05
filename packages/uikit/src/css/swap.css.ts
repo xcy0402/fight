@@ -114,7 +114,7 @@ export const pageVariants = recipe({
       paddingBottom: "0px",
     }),
     style({
-      background: "url('/images/box-bg.png') top no-repeat",
+      background: "#171a1f",
       backgroundSize: "100% 100%",
     }),
     responsiveStyle({

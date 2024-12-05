@@ -28,7 +28,10 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background: linear-gradient(172deg, #2ee6ff, #b73cff, #d43f8d);
+  background: #171a1f;
+  // ${({ theme }) => theme.mediaQueries.sm} {
+  //   background: #FDD436;
+  // }
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
 
@@ -194,7 +197,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
           </AtomBox>
           <AtomBox display={{ xs: "block", md: "none" }}>
             {subLinks ? (
-              <Flex justifyContent="space-around" background="#2b234d" overflow="hidden">
+              <Flex justifyContent="space-around" background="#FDD436" overflow="hidden">
                 <SubMenuItems
                   items={subLinksWithoutMobile}
                   mt={`${totalTopMenuHeight + 1}px`}

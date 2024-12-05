@@ -3161,5 +3161,13 @@
   "Network dividend": "網體分紅",
   "Dividend ratio": "分紅佔比",
   "Adversarial Model": "對抗模型",
-  "income": "收益"
+  "income": "收益",
+  "get": "獲得",
+  "send": "發送",
+  "smgz": "私募規則：",
+  "Launchpad-1": "1.每 ${a} 獲得 ${b}",
+  "Launchpad-2": "2.最少 ${a}、最多${b}且是${a}的整數倍數",
+  "Launchpad-3": "參與人數",
+  "Launchpad-4": "參與金額",
+  "Launchpad": "啟動板"
 }

@@ -1,33 +1,33 @@
-import { Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { ChainId } from '@pancakeswap/chains'
+import { Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import {
-  bscTokens,
+  arbitrumGoerliTokens,
+  arbitrumTokens,
+  baseTestnetTokens,
+  baseTokens,
   bscTestnetTokens,
+  bscTokens,
+  BUSD,
+  lineaTestnetTokens,
+  lineaTokens,
+  opBnbTestnetTokens,
+  opBnbTokens,
+  polygonZkEvmTestnetTokens,
+  polygonZkEvmTokens,
+  scrollSepoliaTokens,
   USDC,
   USDT,
-  BUSD,
   WBTC_ETH,
-  arbitrumTokens,
-  polygonZkEvmTokens,
-  polygonZkEvmTestnetTokens,
-  zksyncTokens,
   zkSyncTestnetTokens,
-  lineaTestnetTokens,
-  arbitrumGoerliTokens,
-  opBnbTokens,
-  opBnbTestnetTokens,
-  baseTokens,
-  baseTestnetTokens,
-  scrollSepoliaTokens,
-  lineaTokens,
+  zksyncTokens,
 } from '@pancakeswap/tokens'
 import { ChainTokenList } from './types'
 
 export {
   ADDITIONAL_BASES,
-  V2_ROUTER_ADDRESS,
   BASES_TO_CHECK_TRADES_AGAINST,
   CUSTOM_BASES,
+  V2_ROUTER_ADDRESS,
 } from '@pancakeswap/smart-router/evm'
 
 export const CHAIN_REFRESH_TIME = {
@@ -54,7 +54,7 @@ export const CHAIN_REFRESH_TIME = {
 export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WNATIVE[ChainId.ETHEREUM], WBTC_ETH],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  [ChainId.BSC]: [bscTokens.usdt, bscTokens.cake, bscTokens.fight],
+  [ChainId.BSC]: [bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.ARBITRUM_ONE]: [arbitrumTokens.weth, arbitrumTokens.usdt, arbitrumTokens.usdc],
   [ChainId.ARBITRUM_GOERLI]: [arbitrumGoerliTokens.weth, arbitrumGoerliTokens.usdc],
@@ -161,4 +161,13 @@ export const GENERIC_GAS_LIMIT_ORDER_EXECUTION = 500000n
 
 export const LIMIT_ORDERS_DOCS_URL = 'https://docs.pancakeswap.finance/products/pancakeswap-exchange/limit-orders'
 
-export const EXCHANGE_PAGE_PATHS = ['/swap', '/limit-orders', 'liquidity','/white-hole', '/add', '/find', '/remove']
+export const EXCHANGE_PAGE_PATHS = [
+  '/swap',
+  '/limit-orders',
+  'liquidity',
+  '/white-hole',
+  '/launchpad',
+  '/add',
+  '/find',
+  '/remove',
+]

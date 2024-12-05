@@ -3,19 +3,19 @@ import { ERC20Token } from '@pancakeswap/sdk'
 
 export const CAKE_MAINNET = new ERC20Token(
   ChainId.BSC,
-  '0xbab4dc8fefbb759f568171df2041a2cfb7a6366a',
+  '0xFa60D973F7642B748046464e165A65B7323b0DEE',
   18,
-  'FTP',
-  'FIGHT PLUS',
+  'HB',
+  'HB',
   'https://pancakeswap.finance/',
 )
 
 export const CAKE_TESTNET = new ERC20Token(
   ChainId.BSC_TESTNET,
-  '0xeC7973146e4f422894b6c24AaC71498cB78244b9',
+  '0xaB1a4d4f1D656d2450692D237fdD6C7f9146e814',
   18,
-  'FTP TEST',
-  'FightSwap Token',
+  'HB TEST',
+  'HB TEST',
   'https://pancakeswap.finance/',
 )
 

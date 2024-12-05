@@ -6,9 +6,11 @@ import { useMemo } from "react";
 import { styled } from "styled-components";
 import { space, SpaceProps } from "styled-system";
 
-import fight from './fight.png';
-import ftp from './ftp.png';
+import fight from "./fight.png";
+import ftp from "./ftp.png";
+import hb from "./hb.png";
 import { getCurrencyLogoUrls } from "./utils";
+
 const StyledLogo = styled(TokenLogo)<{ size: string }>`
   width: ${({ size }) => size};
   height: ${({ size }) => size};
@@ -34,8 +36,9 @@ export function CurrencyLogo({
   const uriLocations = useHttpLocations(currency?.logoURI);
 
   const srcs: string[] = useMemo(() => {
-    if(currency?.logoURI=='fight'||currency?.symbol=='FIGHT') return [fight.src];
-    if(currency?.logoURI=='ftp'||currency?.symbol=='FTP') return [ftp.src];
+    if (currency?.logoURI === "fight" || currency?.symbol === "FIGHT") return [fight.src];
+    if (currency?.logoURI === "ftp" || currency?.symbol === "FTP") return [ftp.src];
+    if (currency?.logoURI === "hb" || currency?.symbol === "HB") return [hb.src];
     if (currency?.isNative) return [];
 
     if (currency?.isToken) {

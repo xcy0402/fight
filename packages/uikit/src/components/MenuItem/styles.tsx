@@ -17,7 +17,7 @@ export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
         bottom: 0;
         height: 4px;
         width: 100%;
-        background: linear-gradient(173deg,#2EE6FF -6%,  #B73CFF 57%, #d43f8d );
+        background: #121519;
         border-radius: 2px 2px 0 0;
       }
     `};
@@ -28,11 +28,15 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   display: flex;
   align-items: center;
 
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.textSubtle)};
+  color: ${({ theme, $isActive }) => ($isActive ? "#121519" : "#848E9C")};
   font-size: 16px;
   font-weight: ${({ $isActive }) => ($isActive ? "600" : "400")};
   opacity: ${({ $isDisabled }) => ($isDisabled ? 0.5 : 1)};
   pointer-events: ${({ $isDisabled }) => ($isDisabled ? "none" : "inherit")};
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    color: ${({ theme, $isActive }) => ($isActive ? "#FDD436" : theme.colors.textSubtle)};
+  }
 
   ${({ $statusColor, theme }) =>
     $statusColor &&

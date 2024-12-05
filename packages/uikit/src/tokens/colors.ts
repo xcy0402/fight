@@ -12,7 +12,7 @@ export const baseColors = {
   warning: "#FFB237",
   warning2D: "#ED4B9E2D",
   warning33: "#ED4B9E33",
-  connect: "linear-gradient(170deg,#2ee6ff 0%, rgba(183,60,255,0.88) 53%, #d43f8d 100%)",
+  connect: "#FDD436",
   linear1: "linear-gradient(180deg, rgba(255,139,218,0.60), rgba(139,251,255,0.60), rgba(255,255,255,0.00))",
   bg1: "#151035",
   bg2: "#2b234d",

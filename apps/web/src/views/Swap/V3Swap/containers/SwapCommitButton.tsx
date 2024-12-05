@@ -373,7 +373,11 @@ export const SwapCommitButton = memo(function SwapCommitButton({
         width="100%"
         variant={isValid && priceImpactSeverity > 2 && !swapCallbackError ? 'danger' : 'primary'}
         disabled={
-          !isValid || (priceImpactSeverity > 3 && !isExpertMode) || !!swapCallbackError || statusWallchain === 'pending'
+          true ||
+          !isValid ||
+          (priceImpactSeverity > 3 && !isExpertMode) ||
+          !!swapCallbackError ||
+          statusWallchain === 'pending'
         }
         onClick={onSwapHandler}
         data-dd-action-name="Swap commit button"

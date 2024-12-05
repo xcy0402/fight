@@ -76,9 +76,13 @@ const config: (
           href: '/liquidity',
         },
         {
-          label: t('white hole confrontation'),
-          href: '/white-hole',
+          label: t('Launchpad'),
+          href: '/launchpad',
         },
+        // {
+        //   label: t('Launchpad'),
+        //   href: '/white-hole',
+        // },
         {
           label: t('Perpetual'),
           // href: getPerpetualUrl({

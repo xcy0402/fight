@@ -122,7 +122,7 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
                     {...linkProps}
                     onClick={onClick}
                   >
-                    <FlexGap color="white" gap="10px" alignItems="center">
+                    <FlexGap gap="10px" alignItems="center">
                       {Icon && <Icon color={isActive ? "secondary" : "textSubtle"} mr="4px" />}
                       {label}
                       {LabelIcon ? <LabelIcon /> : null}

@@ -19,20 +19,12 @@
       "logoURI": "https://tokens.pancakeswap.finance/images/symbol/usdt.png"
     },
     {
-      "name": "FIGHT Token",
-      "symbol": "FIGHT",
-      "address": "0xd9Dc293665aD5B9cC6441674Db92A3205072cA4b",
+      "name": "HB",
+      "symbol": "HB",
+      "address": "0xFa60D973F7642B748046464e165A65B7323b0DEE",
       "chainId": 56,
       "decimals": 18,
-      "logoURI": "fight"
-    },
-    {
-      "name": "FIGHT PLUS",
-      "symbol": "FTP",
-      "address": "0xbab4dc8fefbb759f568171df2041a2cfb7a6366a",
-      "chainId": 56,
-      "decimals": 18,
-      "logoURI": "ftp"
+      "logoURI": "hb"
     },
     {
       "name": "FightSwap Token",

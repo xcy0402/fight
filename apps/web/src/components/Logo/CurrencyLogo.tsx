@@ -8,6 +8,7 @@ import { useMemo } from 'react'
 import { styled } from 'styled-components'
 import fight from '../../../public/images/fight.png'
 import ftp from '../../../public/images/ftp.png'
+import hb from '../../../public/images/hb.png'
 import getTokenLogoURL from '../../utils/getTokenLogoURL'
 
 const StyledLogo = styled(TokenLogo)<{ size: string }>`
@@ -37,8 +38,9 @@ export default function CurrencyLogo({ currency, size = '24px', style }: LogoPro
   const uriLocations = useHttpLocations(currency instanceof WrappedTokenInfo ? currency.logoURI : undefined)
 
   const srcs: string[] = useMemo(() => {
-    if(currency?.symbol==='FIGHT') return [fight.src];
-    if(currency?.symbol==='FTP') return [ftp.src];
+    if (currency?.symbol === 'FIGHT') return [fight.src]
+    if (currency?.symbol === 'FTP') return [ftp.src]
+    if (currency?.symbol === 'HB') return [hb.src]
     if (currency?.isNative) return []
 
     if (currency?.isToken) {

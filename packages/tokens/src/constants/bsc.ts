@@ -16,7 +16,7 @@ export const bscTokens = {
   ),
   ftp: new ERC20Token(
     ChainId.BSC,
-    '0xFa60D973F7642B748046464e165A65B7323b0DEE',
+    '0xc1af6d2ca0ba8efa472ea54790b3caaeb6b80727',
     18,
     'Simb',
     'Simb',

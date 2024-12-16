@@ -81,7 +81,7 @@ export const TEXT = {
     ],
   },
   v3: {
-    title: <Trans>HBSwap v3 Migration</Trans>,
+    title: <Trans>SimbSwap v3 Migration</Trans>,
     steps: [
       {
         title: <Trans>Unstaking from V2 Farms</Trans>,

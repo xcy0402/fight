@@ -12,7 +12,7 @@ export abstract class BaseCurrency {
   public abstract readonly isNative: boolean
 
   /**
-   * Returns whether the currency is a token that is usable in HBSwap without wrapping
+   * Returns whether the currency is a token that is usable in SimbSwap without wrapping
    */
   public abstract readonly isToken: boolean
 
@@ -60,8 +60,8 @@ export abstract class BaseCurrency {
   public abstract equals(other: Currency): boolean
 
   /**
-   * Return the wrapped version of this currency that can be used with the HBSwap contracts. Currencies must
-   * implement this to be used in HBSwap
+   * Return the wrapped version of this currency that can be used with the SimbSwap contracts. Currencies must
+   * implement this to be used in SimbSwap
    */
   public abstract get wrapped(): Token
 }

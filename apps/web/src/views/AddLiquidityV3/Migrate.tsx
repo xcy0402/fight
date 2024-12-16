@@ -617,7 +617,7 @@ function V2PairMigrate({
               <Message variant="warning">
                 <MessageText>
                   {t(
-                    'You are the first liquidity provider for this HBSwap V3 pool. Your liquidity will migrate at the current V2 price.',
+                    'You are the first liquidity provider for this SimbSwap V3 pool. Your liquidity will migrate at the current V2 price.',
                   )}
                   <MessageText>
                     {t('Your transaction cost will be much higher as it includes the gas to create the pool.')}
@@ -676,7 +676,7 @@ function V2PairMigrate({
                 </RowBetween>
               </AutoColumn>
               <Text fontSize={14} style={{ marginTop: 8, fontWeight: 400 }}>
-                {t('You should only deposit liquidity into HBSwap V3 at a price you believe is correct.')} <br />
+                {t('You should only deposit liquidity into SimbSwap V3 at a price you believe is correct.')} <br />
                 {t(
                   'If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so.',
                 )}

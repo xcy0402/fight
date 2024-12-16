@@ -225,7 +225,7 @@ const V3Banner = () => {
     >
       <S.Inner>
         <S.LeftWrapper>
-          <Title>{t('HBSwap V3')}</Title>
+          <Title>{t('SimbSwap V3')}</Title>
           <StyledSubheading data-text={t('Claim $135K CAKE Airdrop & Exclusive NFT')}>
             {t('Claim $135K CAKE Airdrop & Exclusive NFT')}
           </StyledSubheading>

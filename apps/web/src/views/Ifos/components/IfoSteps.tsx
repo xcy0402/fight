@@ -302,7 +302,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
               {t('Activate your Profile')}
             </Heading>
             <Text color="textSubtle" small mb="16px">
-              {t('You’ll need an active HBSwap Profile to take part in an IFO!')}
+              {t('You’ll need an active SimbSwap Profile to take part in an IFO!')}
             </Text>
             {renderAccountStatus()}
           </CardBody>

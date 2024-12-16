@@ -122,7 +122,7 @@ export const PolygonZkEvmBanner = () => {
   const { t } = useTranslation()
   const { isMobile, isDesktop } = useMatchBreakpoints()
 
-  const title = isDesktop ? t('HBSwap Now Live on Polygon zkEVM!') : t('Polygon zkEVM is LIVE!')
+  const title = isDesktop ? t('SimbSwap Now Live on Polygon zkEVM!') : t('Polygon zkEVM is LIVE!')
 
   return (
     <S.Wrapper

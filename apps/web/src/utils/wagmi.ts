@@ -25,7 +25,7 @@ export const injectedConnector = new InjectedConnector({
 export const coinbaseConnector = new CoinbaseWalletConnector({
   chains,
   options: {
-    appName: 'HBSwap',
+    appName: 'SimbSwap',
     appLogoUrl: 'https://pancakeswap.com/logo.png',
   },
 })
@@ -84,7 +84,7 @@ export const cyberWalletConnector = isCyberWallet()
   ? new CyberWalletConnector({
       chains: chains as any,
       options: {
-        name: 'HBSwap',
+        name: 'SimbSwap',
         appId: 'b825cd87-2db3-456d-b108-d61e74d89771',
       },
     })

@@ -153,7 +153,7 @@ const PerpetualBanner = () => {
 
   const perpetualUrl = useMemo(() => getPerpetualUrl({ chainId, languageCode: code, isDark }), [chainId, code, isDark])
   const [onUSCitizenModalPresent] = useModal(
-    <USCitizenConfirmModal title={t('HBSwap Perpetuals')} id={IdType.PERPETUALS} />,
+    <USCitizenConfirmModal title={t('SimbSwap Perpetuals')} id={IdType.PERPETUALS} />,
     false,
     false,
     'usCitizenConfirmModal',

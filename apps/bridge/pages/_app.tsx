@@ -63,17 +63,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta
           name="description"
-          content="Cheaper and faster than Uniswap? Discover HBSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
+          content="Cheaper and faster than Uniswap? Discover SimbSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
         />
         <meta name="theme-color" content="#1FC7D4" />
         <meta name="twitter:image" content="https://pancakeswap.finance/images/hero.png" />
         <meta
           name="twitter:description"
-          content="The most popular AMM on BSC! Earn CAKE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by HBSwap), NFTs, and more, on a platform you can trust."
+          content="The most popular AMM on BSC! Earn CAKE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by SimbSwap), NFTs, and more, on a platform you can trust."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🥞 HBSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
-        <title>Bridge | HBSwap</title>
+        <meta name="twitter:title" content="🥞 SimbSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
+        <title>Bridge | SimbSwap</title>
       </Head>
       <NextThemeProvider>
         <StyledThemeProvider>

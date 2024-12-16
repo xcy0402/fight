@@ -2,11 +2,11 @@ import { TranslateFunction } from '@pancakeswap/localization'
 
 export const getOnBoardingDescriptionMessage = (isOnBoarded: boolean, t: TranslateFunction) => {
   let onBoardingDescription: string = t(
-    'Finally, subscribe to notifications to stay informed on the latest news and updates that HBSwap has to offer.',
+    'Finally, subscribe to notifications to stay informed on the latest news and updates that SimbSwap has to offer.',
   )
   if (!isOnBoarded) {
     onBoardingDescription = t(
-      'Get started with notifications from HBSwap. First authorize notifications by signing in your wallet',
+      'Get started with notifications from SimbSwap. First authorize notifications by signing in your wallet',
     )
   }
   return onBoardingDescription

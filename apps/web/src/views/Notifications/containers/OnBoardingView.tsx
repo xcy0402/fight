@@ -108,7 +108,7 @@ const OnBoardingView = ({
         </Box>
         <FlexGap rowGap="12px" flexDirection="column" justifyContent="center" alignItems="center">
           <Text fontSize="24px" fontWeight="600" lineHeight="120%" textAlign="center">
-            {t('Notifications From HBSwap')}
+            {t('Notifications From SimbSwap')}
           </Text>
           <Text fontSize="16px" textAlign="center" color="textSubtle">
             {onBoardingDescription}

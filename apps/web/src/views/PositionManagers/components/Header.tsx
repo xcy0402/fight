@@ -20,7 +20,7 @@ export const Header = memo(function Header() {
             {t('Position Manager')}
           </Heading>
           <Heading scale="md" color="text">
-            {t('Automate your HBSwap V3 liquidity')}
+            {t('Automate your SimbSwap V3 liquidity')}
           </Heading>
         </Flex>
         {isDesktop && (

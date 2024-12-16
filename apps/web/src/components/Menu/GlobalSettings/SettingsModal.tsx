@@ -338,7 +338,7 @@ function RoutingSettings() {
           <PreTitle mb="24px">{t('Liquidity source')}</PreTitle>
           <Flex justifyContent="space-between" alignItems="center" mb="24px">
             <Flex alignItems="center">
-              <Text>HBSwap V3</Text>
+              <Text>SimbSwap V3</Text>
               <QuestionHelper
                 text={
                   <Flex>
@@ -362,7 +362,7 @@ function RoutingSettings() {
           </Flex>
           <Flex justifyContent="space-between" alignItems="center" mb="24px">
             <Flex alignItems="center">
-              <Text>HBSwap V2</Text>
+              <Text>SimbSwap V2</Text>
               <QuestionHelper
                 text={
                   <Flex flexDirection="column">
@@ -387,7 +387,7 @@ function RoutingSettings() {
           </Flex>
           <Flex justifyContent="space-between" alignItems="center" mb="24px">
             <Flex alignItems="center">
-              <Text>HBSwap {t('StableSwap')}</Text>
+              <Text>SimbSwap {t('StableSwap')}</Text>
               <QuestionHelper
                 text={
                   <Flex flexDirection="column">
@@ -414,7 +414,7 @@ function RoutingSettings() {
           </Flex>
           <Flex justifyContent="space-between" alignItems="center" mb="24px">
             <Flex alignItems="center">
-              <Text>{`HBSwap ${t('MM Linked Pool')}`}</Text>
+              <Text>{`SimbSwap ${t('MM Linked Pool')}`}</Text>
               <QuestionHelper
                 text={
                   <Flex flexDirection="column">

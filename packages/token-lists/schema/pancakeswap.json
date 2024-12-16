@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "pancakeswap",
-  "title": "HBSwap Token List",
-  "description": "Schema for lists of tokens compatible with the HBSwap Interface, including Uniswap standard and HBSwap Aptos",
+  "title": "SimbSwap Token List",
+  "description": "Schema for lists of tokens compatible with the SimbSwap Interface, including Uniswap standard and SimbSwap Aptos",
   "definitions": {
     "Version": {
       "type": "object",

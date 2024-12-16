@@ -1,17 +1,17 @@
 import { DefaultSeoProps } from 'next-seo'
 
 export const SEO: DefaultSeoProps = {
-  titleTemplate: '%s | HBSwap',
-  defaultTitle: 'Game | HBSwap',
-  description: 'Play different games on HBSwap, using CAKE and HBSwap NFTs',
+  titleTemplate: '%s | SimbSwap',
+  defaultTitle: 'Game | SimbSwap',
+  description: 'Play different games on SimbSwap, using CAKE and SimbSwap NFTs',
   twitter: {
     cardType: 'summary_large_image',
-    handle: '@HBSwap',
-    site: '@HBSwap',
+    handle: '@SimbSwap',
+    site: '@SimbSwap',
   },
   openGraph: {
-    title: '🥞 HBSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)',
-    description: 'Play different games on HBSwap, using CAKE and HBSwap NFTs',
+    title: '🥞 SimbSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)',
+    description: 'Play different games on SimbSwap, using CAKE and SimbSwap NFTs',
     // images: [{ url: 'https://assets.pancakeswap.finance/web/og/v2/hero.jpg' }],
   },
 }

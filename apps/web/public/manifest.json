@@ -1,6 +1,6 @@
 {
-  "short_name": "HBSwap",
-  "name": "HBSwap",
+  "short_name": "SimbSwap",
+  "name": "SimbSwap",
   "description": "Farm CAKE with Pancake LP Tokens",
   "homepage_url": "https://pancakeswap.finance",
   "start_url": ".",

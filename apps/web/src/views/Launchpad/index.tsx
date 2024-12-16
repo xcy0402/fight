@@ -1,36 +1,24 @@
-import {
-  Flex,
-  ButtonMenu,
-  ButtonMenuItem,
-  Box,
-  Text,
-  CopyAddress,
-  CopyButton,
-  ArrowDownIcon,
-  Heading,
-  Button,
-  useToast,
-} from '@pancakeswap/uikit'
-import { useState, useMemo } from 'react'
-import { useAccount, useWalletClient } from 'wagmi'
+import { ChainId } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
+import { CAKE } from '@pancakeswap/tokens'
+import { ArrowDownIcon, Box, Button, CopyButton, Flex, Heading, Text, useToast } from '@pancakeswap/uikit'
+import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
+import { formatAmount } from '@pancakeswap/utils/formatFractions'
+import BigNumber from 'bignumber.js'
 import { AppBody } from 'components/App'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import Image from 'next/image'
-import useNativeCurrency from 'hooks/useNativeCurrency'
-import { useCurrencyBalance } from 'state/wallet/hooks'
-import { formatAmount } from '@pancakeswap/utils/formatFractions'
-import { CAKE } from '@pancakeswap/tokens'
-import { ChainId } from '@pancakeswap/chains'
-import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
-import BigNumber from 'bignumber.js'
-import { getRefAddress } from 'utils/getQueryString'
-import { DEFAULT_TOKEN_DECIMAL } from 'config'
-import { usePublicNodeWaitForTransaction } from 'hooks/usePublicNodeWaitForTransaction'
-import { useActiveChainId } from 'hooks/useActiveChainId'
 import { ToastDescriptionWithTx } from 'components/Toast'
-import Page from '../Page'
+import { DEFAULT_TOKEN_DECIMAL } from 'config'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+import useNativeCurrency from 'hooks/useNativeCurrency'
+import { usePublicNodeWaitForTransaction } from 'hooks/usePublicNodeWaitForTransaction'
+import Image from 'next/image'
+import { useMemo, useState } from 'react'
+import { useCurrencyBalance } from 'state/wallet/hooks'
+import { getRefAddress } from 'utils/getQueryString'
+import { useAccount, useWalletClient } from 'wagmi'
 import smgz from '../../../public/images/smgz.png'
+import Page from '../Page'
 import FromInput from './components/fromInput'
 import ToInput from './components/toInput'
 import { getPreSaleTokenContract, useGetIncome } from './hooks/useGetIncome'
@@ -70,14 +58,6 @@ export default function Launchpad() {
   }, [fromval, account, priceStr])
 
   const isDisabled = useMemo(() => {
-    console.log(
-      !Number(fromval),
-      isLoading,
-      fomBalance,
-      Number(fromval) < Number(minBNBStr),
-      Number(fromval) > Number(maxBNBStr),
-      Number(fromval) < Number(fomBalance),
-    )
     return (
       !Number(fromval) ||
       isLoading ||
@@ -189,7 +169,7 @@ export default function Launchpad() {
           <Text fontSize={14} color="#5D6673" lineHeight="24px" fontWeight="600">
             {t('1. Get %b% for every %a%', {
               a: '1BNB',
-              b: `${priceStr || 0} HB`,
+              b: `${priceStr || 0} Simb`,
             })}
           </Text>
           <Text fontSize={14} color="#5D6673" lineHeight="24px" fontWeight="600">

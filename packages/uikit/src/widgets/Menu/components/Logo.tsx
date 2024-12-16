@@ -16,13 +16,13 @@ const blink = keyframes`
 const StyledLink = styled("a")`
   display: flex;
   .mobile-icon {
-    width: 32px;
+    width: 60px;
     ${({ theme }) => theme.mediaQueries.lg} {
       display: none;
     }
   }
   .desktop-icon {
-    width: 40px;
+    width: 104px;
     display: none;
     ${({ theme }) => theme.mediaQueries.lg} {
       display: block;

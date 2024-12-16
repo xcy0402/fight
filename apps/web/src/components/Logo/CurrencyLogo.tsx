@@ -40,7 +40,7 @@ export default function CurrencyLogo({ currency, size = '24px', style }: LogoPro
   const srcs: string[] = useMemo(() => {
     if (currency?.symbol === 'FIGHT') return [fight.src]
     if (currency?.symbol === 'FTP') return [ftp.src]
-    if (currency?.symbol === 'HB') return [hb.src]
+    if (currency?.symbol === 'Simb') return [hb.src]
     if (currency?.isNative) return []
 
     if (currency?.isToken) {

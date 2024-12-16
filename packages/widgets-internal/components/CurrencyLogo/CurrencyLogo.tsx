@@ -38,7 +38,7 @@ export function CurrencyLogo({
   const srcs: string[] = useMemo(() => {
     if (currency?.logoURI === "fight" || currency?.symbol === "FIGHT") return [fight.src];
     if (currency?.logoURI === "ftp" || currency?.symbol === "FTP") return [ftp.src];
-    if (currency?.logoURI === "hb" || currency?.symbol === "HB") return [hb.src];
+    if (currency?.logoURI === "hb" || currency?.symbol === "Simb") return [hb.src];
     if (currency?.isNative) return [];
 
     if (currency?.isToken) {

@@ -19,8 +19,8 @@
       "logoURI": "https://tokens.pancakeswap.finance/images/symbol/usdt.png"
     },
     {
-      "name": "HB",
-      "symbol": "HB",
+      "name": "Simb",
+      "symbol": "Simb",
       "address": "0xFa60D973F7642B748046464e165A65B7323b0DEE",
       "chainId": 56,
       "decimals": 18,

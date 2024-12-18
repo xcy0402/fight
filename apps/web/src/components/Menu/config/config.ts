@@ -75,10 +75,10 @@ const config: (
           label: t('Liquidity'),
           href: '/liquidity',
         },
-        {
-          label: t('Launchpad'),
-          href: '/launchpad',
-        },
+        // {
+        //   label: t('Launchpad'),
+        //   href: '/launchpad',
+        // },
         // {
         //   label: t('Launchpad'),
         //   href: '/white-hole',

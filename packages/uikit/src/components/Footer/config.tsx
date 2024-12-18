@@ -1,6 +1,6 @@
 import { Language } from "../LangSelector/types";
+import { TelegramIcon, TwitterIcon } from "../Svg";
 import { FooterLinkType } from "./types";
-import { TwitterIcon, TelegramIcon, RedditIcon, InstagramIcon, GithubIcon, DiscordIcon, YoutubeIcon } from "../Svg";
 
 export const footerLinks: FooterLinkType[] = [
   {
@@ -80,12 +80,12 @@ export const socials = [
   {
     label: "Twitter",
     icon: TwitterIcon,
-    href: "https://x.com/FIGHT_FTP",
+    href: "https://x.com/bsc_simba",
   },
   {
     label: "Telegram",
     icon: TelegramIcon,
-    href: "https://t.me/fitgh_k"
+    href: "https://t.me/simba_mm",
   },
 ];
 

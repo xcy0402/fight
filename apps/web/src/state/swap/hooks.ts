@@ -235,7 +235,7 @@ export function queryParametersToSwapState(
 
   return {
     [Field.INPUT]: {
-      currencyId: inputCurrency==='BNB'?'0x55d398326f99059fF775485246999027B3197955':inputCurrency,
+      currencyId: inputCurrency,
     },
     [Field.OUTPUT]: {
       currencyId: outputCurrency,
